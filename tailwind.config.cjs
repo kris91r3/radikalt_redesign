@@ -8,6 +8,7 @@ module.exports = {
         gul: "#F4F465",
         sort: "#36322d",
         bla: "#008180",
+        lysbla: "#E5F2F2",
       },
     },
     fontFamily: {

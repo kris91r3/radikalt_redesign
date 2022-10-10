@@ -10,6 +10,9 @@ module.exports = {
         bla: "#008180",
       },
     },
+    fontFamily: {
+      sans: ["Helvetica", "Arial", "sans-serif"],
+    },
   },
   plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };

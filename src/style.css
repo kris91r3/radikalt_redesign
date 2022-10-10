@@ -5,31 +5,41 @@
 @layer base {
   h1,
   h2,
-  h3,
-  h4,
-  h5 {
-    font-family: "Open Sans", sans-serif;
+  h3 {
+    font-weight: bold;
+    color: #36322d;
+    /* font-family: "Open Sans", sans-serif; */
   }
+
+  h4,
   p {
-    font-family: "Lora", serif;
+    color: #36322d;
   }
 }
 
 h1 {
   font-size: 45px;
+  line-height: 1.1;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 h2 {
-  font-size: medium;
+  font-size: 25px;
+  line-height: 1.3;
+  margin-bottom: 15px;
 }
 
 h3 {
-  font-size: x-large;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 h4 {
-  font-size: small;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 p {
-  font-size: x-large;
-  color: #36322d;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Vildskud Festival</title>
+  </head>
+  <header class="bg-bla"></header>
+  <body class="grid">
+    <main class="mx-10 grid gap-10">
+      <!-- om tekst -->
+      <section>
+        <h1>Forestillinger</h1>
+        <h2>Forestillinger fra det uafhængige scenekunstmiljø</h2>
+        <p>
+          Vildskud festivalens mål er at skabe en platform, hvor undergrunden i
+          dansk scenekunst får mulighed for at udfolde sig. På vores fire venues
+          i henholdsvis KBH K og på Amager finder du spændende forestillinger i
+          forskellige genre og formater.
+        </p>
+        <p>
+          Søg via kategorierne herunder, der er helt sikkert noget for enhver
+          smag.
+        </p>
+      </section>
+      <!-- filter-knapper -->
+      <section>
+        <div class="flex flex-row justify-center gap-5">
+          <button class="border-2 border-solid border-bla p-2">Venue</button>
+          <button class="border-2 border-solid border-bla p-2">Datoer</button>
+          <button class="border-2 border-solid border-bla p-2">
+            Forestillinger
+          </button>
+          <button class="bg-bla p-2">Alle</button>
+        </div>
+      </section>
+      <!-- Alle forestillinger -->
+      <section
+        class="grid grid-cols-1 border-2 border-solid border-bla md:grid-cols-2 lg:grid-cols-3"
+      >
+        <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
+        <!-- kolonne 1 -->
+        <img src="billeder/mand.webp" alt="" />
+        <!-- kolonne 2 -->
+        <div class="grid gap-5 p-4">
+          <h3>GO GO YOKO</h3>
+          <div class="flex gap-5">
+            <h4 class="font-bold">Lokation:</h4>
+            <p>Xenon - Teaterhuset Rådhustræde 13, 1466 KBH K</p>
+          </div>
+
+          <div class="flex gap-5">
+            <h4 class="font-bold">Varighed:</h4>
+            <p>1 time</p>
+          </div>
+        </div>
+        <!-- kolonne 3 -->
+        <div class="grid gap-5 p-4">
+          <div class="border-2 border-solid border-bla p-2">
+            <h4 class="font-bold">Spilletider</h4>
+            <p>
+              Tors. d. 4. kl 20:15 &
+              <br />
+              Fre. d. 5. kl 16:30
+            </p>
+          </div>
+          <div>
+            <a
+              href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
+              ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
+                Reserver Plads
+              </h3>
+            </a>
+
+            <p>
+              OBS! Du skal købe billet for at reservere plads.
+              <a
+                class="text-blue-700 underline"
+                href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
+                >HER</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

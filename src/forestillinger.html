@@ -7,7 +7,88 @@
     <meta name="robots" content="noindex" />
     <title>Vildskud Festival</title>
   </head>
-  <header class="bg-bla"></header>
+  <header class="bg-bla">
+    <div x-data="{ isOpen: false }" class="flex justify-between bg-bla p-4">
+      <!-- header right section -->
+      <div class="flex items-center">
+        <span>
+          <a href="index.html"
+            ><img
+              class="mx-4 w-44 p-1 lg:w-60"
+              src="billeder/vildskudlogo.svg"
+              alt="vildskudlogo" /></a
+        ></span>
+      </div>
+
+      <!-- left header section -->
+      <div
+        class="flex flex-col place-items-end justify-between pt-6 pr-4 lg:pr-8 lg:pt-0"
+      >
+        <button @click="isOpen = !isOpen" type="submit">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-white lg:hidden"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        <div class="hidden space-x-14 lg:inline-block">
+          <a
+            href="koebbillet.html"
+            class="text-off rounded-sm p-2 text-lg text-offwhite hover:bg-blabla"
+            >Køb billet</a
+          >
+          <a
+            href="forestillinger.html"
+            class="rounded-sm p-2 text-lg text-offwhite hover:bg-blabla"
+            >Forestillinger</a
+          >
+          <a
+            href="spilletider.html"
+            class="rounded-sm p-2 text-lg text-offwhite hover:bg-blabla"
+            >Spilletider</a
+          >
+          <a
+            href="vaermed.html"
+            class="rounded-sm p-2 text-lg text-offwhite hover:bg-blabla"
+            >Vær med</a
+          >
+        </div>
+
+        <!-- mobile navbar -->
+        <div class="mobile-navbar">
+          <!-- navbar wrapper -->
+          <div
+            class="static top-24 h-48 w-full rounded-sm bg-blabla p-2 drop-shadow-xl"
+            x-show="isOpen"
+            @click.away=" isOpen = false"
+          >
+            <div class="flex flex-col space-y-5">
+              <a href="koebbillet.html" class="text-md text-offwhite"
+                >Køb billet</a
+              >
+              <a href="forestillinger.html" class="text-md text-offwhite"
+                >Forestillinger</a
+              >
+              <a href="spilletider.html" class="text-md text-offwhite"
+                >Spilletider</a
+              >
+              <a href="vaermed.html" class="text-md text-offwhite">Vær med</a>
+            </div>
+          </div>
+        </div>
+        <!-- mobile navbar slut -->
+      </div>
+    </div>
+  </header>
   <body class="">
     <main class="mx-10">
       <!-- om tekst -->
@@ -349,6 +430,52 @@
         </article>
       </section>
     </main>
+    <!-- footeren -->
+
+    <footer class="bg-bla">
+      <div
+        class="grid grid-cols-2 gap-14 p-10 lg:flex lg:flex-row lg:justify-evenly"
+      >
+        <div>
+          <h4 class="font-bold text-offwhite">Samarbejdspartnere</h4>
+          <h4 class="text-offwhite">Venues</h4>
+          <h4 class="text-offwhite">Sponsorere</h4>
+        </div>
+        <div>
+          <h4 class="font-bold text-offwhite">Om Vildskud</h4>
+          <h4 class="text-offwhite">Om os</h4>
+          <h4 class="text-offwhite">Cookiepolitik</h4>
+          <h4 class="text-offwhite">Privatlivspolitik</h4>
+          <h4 class="text-offwhite">Handelsbetingelser</h4>
+          <h4 class="text-offwhite">Sitemap</h4>
+        </div>
+        <div>
+          <h4 class="font-bold text-offwhite">Find os</h4>
+          <h4 class="text-offwhite">Kontakt os</h4>
+        </div>
+
+        <div class="flex gap-8">
+          <a href="#0"
+            ><img
+              class="h-12 w-12"
+              src="/billeder/facebookikon.svg"
+              alt="facebook ikon"
+          /></a>
+
+          <a href="#0"
+            ><img
+              class="h-12 w-12"
+              src="billeder/instagramikon.svg"
+              alt="instagram ikon"
+          /></a>
+        </div>
+      </div>
+      <div>
+        <p class="m-0 flex justify-center p-2 text-sm text-offwhite">
+          Copyright © 2022 | Lunefuld.dk | CVR.nr.: 12 34 56 78
+        </p>
+      </div>
+    </footer>
     <script type="module" src="./main.js"></script>
   </body>
 </html>

@@ -108,667 +108,683 @@
       </section>
       <!-- filter-knapper -->
       <section
-      class="mb-8 border-2 border-black p-8 pb-4"
-      id="step"
-      x-data="{ spilledag: 'alledage', spillested: 'allevenues', forestilling: 'alleforestillinger', skjulteforestillinger : 0 }"
-    >
-      <div class="border-b border-slate-500 pt-4 pb-8">
-        <form id="filtre" class="flex">
-          <div class="mb-4 mr-4">
-            <label for="spilledag">Dato:</label>
-            <select
-              name="spilledag"
-              id="spilledag"
-              x-model="spilledag"
-              form="filtre"
-              x-on:change="$nextTick(() => { ingenforestillinger() });"
-            >
-              <option value="alledage">Alle dage</option>
-              <option value="tirsdag">Tirsdag</option>
-              <option value="onsdag">Onsdag</option>
-              <option value="torsdag">Torsdag</option>
-              <option value="fredag">Fredag</option>
-              <option value="lordag">Lørdag</option>
-            </select>
-          </div>
-
-          <div class="mb-4 mr-4">
-            <label for="spillested">Venue:</label>
-            <select
-              name="spillested"
-              id="spillested"
-              x-model="spillested"
-              form="filtre"
-              x-on:change="$nextTick(() => { ingenforestillinger() });"
-            >
-              <option value="allevenues">Alle venues</option>
-              <option value="vox">Vox</option>
-              <option value="downunder">Downunder</option>
-              <option value="zebu">Zebu</option>
-              <option value="xenon">Xenon</option>
-            </select>
-          </div>
-
-          <div class="mb-4 mr-4">
-            <label for="forestilling">Forestilling:</label>
-            <select
-              name="forestilling"
-              id="forestilling"
-              x-model="forestilling"
-              form="filtre"
-              x-on:change="$nextTick(() => { ingenforestillinger() });"
-            >
-              <option value="alleforestillinger">Alle forestillinger</option>
-              <option value="gogo">GO GO YO-Yoko</option>
-              <option value="whatfires">
-                What Fires Together Wires Together
-              </option>
-              <option value="mandligger">Mand Ligger Som Mand Har Redt</option>
-              <option value="frygten">FRYGTEN FOR AT LEVE</option>
-              <option value="rebirth">RE-BIRTH</option>
-              <option value="vild">Vild Med Mig</option>
-              <option value="detlevende">DET LEVENDE RUM</option>
-            </select>
-          </div>
-        </form>
-      </div>
-
-      <section class="forestillinger gap-3 border-b py-8">
-        <!-- go go yo-yoko -->
-        <article
-          class="forestilling mb-10 p-3"
-          :class="{'hidden': !(['alledage', 'torsdag', 'fredag'].includes(spilledag) && ['allevenues', 'xenon'].includes(spillested) && ['alleforestillinger', 'gogo'].includes(forestilling) ) }"
-          x-transition:enter.duration.800ms
-        >
-          <!-- x-show alternativ syntaks -->
-          <div class="mb-10">
-            <div
-              class="border-bla grid grid-cols-1 border-2 border-solid md:grid-cols-2 lg:grid-cols-3"
-            >
-              <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
-              <!-- kolonne 1 -->
-              <!-- <img src="billeder/mand.webp" alt="" /> -->
-              <!-- kolonne 2 -->
-              <div class="grid gap-5 p-4">
-                <h3>GO GO YOKO</h3>
-                <div class="flex gap-5">
-                  <h4 class="font-bold">Lokation:</h4>
-                  <p>Xenon - Teaterhuset Rådhustræde 13, 1466 KBH K</p>
-                </div>
-
-                <div class="flex gap-5">
-                  <h4 class="font-bold">Varighed:</h4>
-                  <p>1 time</p>
-                </div>
-              </div>
-              <!-- kolonne 3 -->
-              <div class="grid gap-5 p-4">
-                <div class="border-bla border-2 border-solid p-2">
-                  <h4 class="font-bold">Spilletider</h4>
-                  <p>
-                    Tors. d. 4. kl 20:15 &
-                    <br />
-                    Fre. d. 5. kl 16:30
-                  </p>
-                </div>
-                <div>
-                  <a
-                    href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                    ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
-                      Reserver Plads
-                    </h3>
-                  </a>
-
-                  <p>
-                    OBS! Du skal købe billet for at reservere plads.
-                    <a
-                      class="text-blue-700 underline"
-                      href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                      >HER</a
-                    >
-                  </p>
-                </div>
-              </div>
+        class="mb-8 p-8 pb-4"
+        id="step"
+        x-data="{ spilledag: 'alledage', spillested: 'allevenues', forestilling: 'alleforestillinger', skjulteforestillinger : 0 }"
+      >
+        <div class="">
+          <form id="filtre" class="flex justify-between">
+            <div class="border-2 border-solid border-bla">
+              <label for="spilledag"></label>
+              <select
+                name="spilledag"
+                id="spilledag"
+                x-model="spilledag"
+                form="filtre"
+                x-on:change="$nextTick(() => { ingenforestillinger() });"
+              >
+                <option value="alledage">Alle dage</option>
+                <option value="tirsdag">Tirsdag</option>
+                <option value="onsdag">Onsdag</option>
+                <option value="torsdag">Torsdag</option>
+                <option value="fredag">Fredag</option>
+                <option value="lordag">Lørdag</option>
+              </select>
             </div>
-            <details>
-              <summary class="bg-bla p-2">Læs om stykket</summary>
-              <div class="border-bla bg-lysbla border-2 border-solid p-2">
-                <p>
-                  Find din yoyo frem og sæt dig selv fri i en skov. Det går godt
-                  for de tre roomies med at dele lejlighed, men kæft det går
-                  dårligt med at være mennesker i en nulfejlskultur, hvor alt
-                  handler om meritter og milepælsplaner. Rakel er blevet droppet
-                  af sin eks, Lua kommer bare aldrig videre til prøverne på
-                  Skuespillerskolen og Skjold dater alarmerende uhyggeligt
-                  meget. Ikke flere undvigemanøvre for at blive stemplet som
-                  fiasko. Ikke flere hvide løgne for at være bedre end man er.
-                  Ikke mere pleaser-pis for at rykke op i sit selvskabte
-                  hierarki. Ud med skam og ind med sandhed. Med inspiration i
-                  Shinrin-Yoku, anti-happy-go-lucky-mentalitet, vigtige venner
-                  og svære erkendelser tager Teater Kopfkino os med på en komisk
-                  dannelsesrejse midt i bøvlede livsprocesser. <br />
-                  <br />
-                  Instruktør: August Aabo Skuespillere Ann Celina Fønsskov,
-                  Sally Klie & Luca Storm Tekniker Niels Eske Juul Andersen
-                  Komponist Simon Klie Lyrik Musa Mijia Scenograf Ida Sofie
-                  Larsen Fotograf Tenzin Olivia Gustenhoff & Liva Bech Holskov
-                  Konsulent: Emil Christiansen
-                </p>
-              </div>
-            </details>
-          </div>
-        </article>
-        <!-- What fires together -->
-        <article
-          class="forestilling mb-10 p-3"
-          :class="{'hidden': !(['alledage', 'tirsdag', 'onsdag'].includes(spilledag) && ['allevenues', 'zebu'].includes(spillested) && ['alleforestillinger', 'whatfires'].includes(forestilling) ) }"
-          x-transition:enter.duration.800ms
-        >
-          <div class="mb-10">
-            <div
-              class="border-bla grid grid-cols-1 border-2 border-solid md:grid-cols-2 lg:grid-cols-3"
-            >
-              <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
-              <!-- kolonne 1 -->
-              <!-- <img src="billeder/mand.webp" alt="" /> -->
-              <!-- kolonne 2 -->
-              <div class="grid gap-5 p-4">
-                <h3>What fires</h3>
-                <div class="flex gap-5">
-                  <h4 class="font-bold">Lokation:</h4>
-                  <p>ZeBU - Øresundsvej 4-6, 1 2300 KBH S</p>
-                </div>
 
-                <div class="flex gap-5">
-                  <h4 class="font-bold">Varighed:</h4>
-                  <p>1 time</p>
-                </div>
-              </div>
-              <!-- kolonne 3 -->
-              <div class="grid gap-5 p-4">
-                <div class="border-bla border-2 border-solid p-2">
-                  <h4 class="font-bold">Spilletider</h4>
-                  <p>
-                    Tirs. d. 2. kl 16:00 &
-                    <br />
-                    Ons. d. 3. kl 17:30
-                  </p>
-                </div>
-                <div>
-                  <a
-                    href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                    ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
-                      Reserver Plads
-                    </h3>
-                  </a>
-
-                  <p>
-                    OBS! Du skal købe billet for at reservere plads.
-                    <a
-                      class="text-blue-700 underline"
-                      href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                      >HER</a
-                    >
-                  </p>
-                </div>
-              </div>
+            <div class="border-2 border-solid border-bla">
+              <label for="spillested"></label>
+              <select
+                name="spillested"
+                id="spillested"
+                x-model="spillested"
+                form="filtre"
+                x-on:change="$nextTick(() => { ingenforestillinger() });"
+              >
+                <option value="allevenues">Alle venues</option>
+                <option value="vox">Vox</option>
+                <option value="downunder">Downunder</option>
+                <option value="zebu">Zebu</option>
+                <option value="xenon">Xenon</option>
+              </select>
             </div>
-            <details>
-              <summary class="bg-bla p-2">Læs om stykket</summary>
-              <div class="border-bla bg-lysbla border-2 border-solid p-2">
-                <p>
-                  Find din yoyo frem og sæt dig selv fri i en skov. Det går godt
-                  for de tre roomies med at dele lejlighed, men kæft det går
-                  dårligt med at være mennesker i en nulfejlskultur, hvor alt
-                  handler om meritter og milepælsplaner. Rakel er blevet droppet
-                  af sin eks, Lua kommer bare aldrig videre til prøverne på
-                  Skuespillerskolen og Skjold dater alarmerende uhyggeligt
-                  meget. Ikke flere undvigemanøvre for at blive stemplet som
-                  fiasko. Ikke flere hvide løgne for at være bedre end man er.
-                  Ikke mere pleaser-pis for at rykke op i sit selvskabte
-                  hierarki. Ud med skam og ind med sandhed. Med inspiration i
-                  Shinrin-Yoku, anti-happy-go-lucky-mentalitet, vigtige venner
-                  og svære erkendelser tager Teater Kopfkino os med på en komisk
-                  dannelsesrejse midt i bøvlede livsprocesser. <br />
-                  <br />
-                  Instruktør: August Aabo Skuespillere Ann Celina Fønsskov,
-                  Sally Klie & Luca Storm Tekniker Niels Eske Juul Andersen
-                  Komponist Simon Klie Lyrik Musa Mijia Scenograf Ida Sofie
-                  Larsen Fotograf Tenzin Olivia Gustenhoff & Liva Bech Holskov
-                  Konsulent: Emil Christiansen
-                </p>
-              </div>
-            </details>
-          </div>
-        </article>
 
-        <!-- Mand Ligger -->
-        <article
-          class="forestilling mb-10 p-3"
-          :class="{'hidden': !(['alledage', 'fredag', 'lordag'].includes(spilledag) && ['allevenues', 'vox'].includes(spillested) && ['alleforestillinger', 'mandligger'].includes(forestilling) ) }"
-          x-transition:enter.duration.800ms
-        >
-          <div class="mb-10">
-            <div
-              class="border-bla grid grid-cols-1 border-2 border-solid md:grid-cols-2 lg:grid-cols-3"
-            >
-              <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
-              <!-- kolonne 1 -->
-              <!-- <img src="billeder/mand.webp" alt="" /> -->
-              <!-- kolonne 2 -->
-              <div class="grid gap-5 p-4">
-                <h3>Mand Ligger</h3>
-                <div class="flex gap-5">
-                  <h4 class="font-bold">Lokation:</h4>
-                  <p>Vox - Teaterhuset Rådhustræde 13, 1466 KBH K</p>
-                </div>
-
-                <div class="flex gap-5">
-                  <h4 class="font-bold">Varighed:</h4>
-                  <p>1 time</p>
-                </div>
-              </div>
-              <!-- kolonne 3 -->
-              <div class="grid gap-5 p-4">
-                <div class="border-bla border-2 border-solid p-2">
-                  <h4 class="font-bold">Spilletider</h4>
-                  <p>
-                    Fre. d. 5. kl 19:15 &
-                    <br />
-                    Lør. d. 6. kl 13:00 & 17:30
-                  </p>
-                </div>
-                <div>
-                  <a
-                    href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                    ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
-                      Reserver Plads
-                    </h3>
-                  </a>
-
-                  <p>
-                    OBS! Du skal købe billet for at reservere plads.
-                    <a
-                      class="text-blue-700 underline"
-                      href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                      >HER</a
-                    >
-                  </p>
-                </div>
-              </div>
+            <div class="border-2 border-solid border-bla">
+              <label for="forestilling"></label>
+              <select
+                name="forestilling"
+                id="forestilling"
+                x-model="forestilling"
+                form="filtre"
+                x-on:change="$nextTick(() => { ingenforestillinger() });"
+              >
+                <option value="alleforestillinger">Alle forestillinger</option>
+                <option value="gogo">GO GO YO-Yoko</option>
+                <option value="whatfires">
+                  What Fires Together Wires Together
+                </option>
+                <option value="mandligger">
+                  Mand Ligger Som Mand Har Redt
+                </option>
+                <option value="frygten">FRYGTEN FOR AT LEVE</option>
+                <option value="rebirth">RE-BIRTH</option>
+                <option value="vild">Vild Med Mig</option>
+                <option value="detlevende">DET LEVENDE RUM</option>
+              </select>
             </div>
-            <details>
-              <summary class="bg-bla p-2">Læs om stykket</summary>
-              <div class="border-bla bg-lysbla border-2 border-solid p-2">
-                <p>
-                  Find din yoyo frem og sæt dig selv fri i en skov. Det går godt
-                  for de tre roomies med at dele lejlighed, men kæft det går
-                  dårligt med at være mennesker i en nulfejlskultur, hvor alt
-                  handler om meritter og milepælsplaner. Rakel er blevet droppet
-                  af sin eks, Lua kommer bare aldrig videre til prøverne på
-                  Skuespillerskolen og Skjold dater alarmerende uhyggeligt
-                  meget. Ikke flere undvigemanøvre for at blive stemplet som
-                  fiasko. Ikke flere hvide løgne for at være bedre end man er.
-                  Ikke mere pleaser-pis for at rykke op i sit selvskabte
-                  hierarki. Ud med skam og ind med sandhed. Med inspiration i
-                  Shinrin-Yoku, anti-happy-go-lucky-mentalitet, vigtige venner
-                  og svære erkendelser tager Teater Kopfkino os med på en komisk
-                  dannelsesrejse midt i bøvlede livsprocesser. <br />
-                  <br />
-                  Instruktør: August Aabo Skuespillere Ann Celina Fønsskov,
-                  Sally Klie & Luca Storm Tekniker Niels Eske Juul Andersen
-                  Komponist Simon Klie Lyrik Musa Mijia Scenograf Ida Sofie
-                  Larsen Fotograf Tenzin Olivia Gustenhoff & Liva Bech Holskov
-                  Konsulent: Emil Christiansen
-                </p>
-              </div>
-            </details>
-          </div>
-        </article>
+          </form>
+        </div>
 
-        <!-- Frygetn for at Leve -->
-        <article
-          class="forestilling mb-10 p-3"
-          :class="{'hidden': !(['alledage', 'fredag', 'lordag'].includes(spilledag) && ['allevenues', 'xenon'].includes(spillested) && ['alleforestillinger', 'frygten'].includes(forestilling) ) }"
-          x-transition:enter.duration.800ms
-        >
-          <div class="mb-10">
-            <div
-              class="border-bla grid grid-cols-1 border-2 border-solid md:grid-cols-2 lg:grid-cols-3"
-            >
-              <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
-              <!-- kolonne 1 -->
-              <!-- <img src="billeder/mand.webp" alt="" /> -->
-              <!-- kolonne 2 -->
-              <div class="grid gap-5 p-4">
-                <h3>Frygten For At Leve</h3>
-                <div class="flex gap-5">
-                  <h4 class="font-bold">Lokation:</h4>
-                  <p>Xenon - Teaterhuset Rådhustræde 13, 1466 KBH K</p>
-                </div>
+        <section class="forestillinger gap-3 py-8">
+          <!-- go go yo-yoko -->
+          <article
+            class="forestilling mb-10"
+            :class="{'hidden': !(['alledage', 'torsdag', 'fredag'].includes(spilledag) && ['allevenues', 'xenon'].includes(spillested) && ['alleforestillinger', 'gogo'].includes(forestilling) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <!-- x-show alternativ syntaks -->
+            <div class="mb-10">
+              <div
+                class="grid grid-cols-1 border-2 border-solid border-bla md:grid-cols-2 lg:grid-cols-3"
+              >
+                <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
+                <!-- kolonne 1 -->
+                <img src="billeder/mand.webp" alt="go go yo-yoko" />
+                <!-- kolonne 2 -->
+                <div class="grid gap-5 p-4">
+                  <h3>GO GO YO-YOKO</h3>
+                  <div class="flex gap-5">
+                    <h4 class="font-bold">Lokation:</h4>
+                    <p>Xenon - Teaterhuset Rådhustræde 13, 1466 KBH K</p>
+                  </div>
 
-                <div class="flex gap-5">
-                  <h4 class="font-bold">Varighed:</h4>
-                  <p>1 time</p>
+                  <div class="flex gap-5">
+                    <h4 class="font-bold">Varighed:</h4>
+                    <p>1 time</p>
+                  </div>
                 </div>
-              </div>
-              <!-- kolonne 3 -->
-              <div class="grid gap-5 p-4">
-                <div class="border-bla border-2 border-solid p-2">
-                  <h4 class="font-bold">Spilletider</h4>
-                  <p>
-                    Fre. d. 5. kl 20:30 &
-                    <br />
-                    Lør. d. 6. kl 12:30 & 14:45
-                  </p>
-                </div>
-                <div>
-                  <a
-                    href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                    ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
-                      Reserver Plads
-                    </h3>
-                  </a>
-
-                  <p>
-                    OBS! Du skal købe billet for at reservere plads.
+                <!-- kolonne 3 -->
+                <div class="grid gap-5 p-4">
+                  <div class="border-2 border-solid border-bla p-2">
+                    <h4 class="font-bold">Spilletider</h4>
+                    <p>
+                      Tors. d. 4. kl 20:15 &
+                      <br />
+                      Fre. d. 5. kl 16:30
+                    </p>
+                  </div>
+                  <div>
                     <a
-                      class="text-blue-700 underline"
                       href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                      >HER</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-            <details>
-              <summary class="bg-bla p-2">Læs om stykket</summary>
-              <div class="border-bla bg-lysbla border-2 border-solid p-2">
-                <p>
-                  Find din yoyo frem og sæt dig selv fri i en skov. Det går godt
-                  for de tre roomies med at dele lejlighed, men kæft det går
-                  dårligt med at være mennesker i en nulfejlskultur, hvor alt
-                  handler om meritter og milepælsplaner. Rakel er blevet droppet
-                  af sin eks, Lua kommer bare aldrig videre til prøverne på
-                  Skuespillerskolen og Skjold dater alarmerende uhyggeligt
-                  meget. Ikke flere undvigemanøvre for at blive stemplet som
-                  fiasko. Ikke flere hvide løgne for at være bedre end man er.
-                  Ikke mere pleaser-pis for at rykke op i sit selvskabte
-                  hierarki. Ud med skam og ind med sandhed. Med inspiration i
-                  Shinrin-Yoku, anti-happy-go-lucky-mentalitet, vigtige venner
-                  og svære erkendelser tager Teater Kopfkino os med på en komisk
-                  dannelsesrejse midt i bøvlede livsprocesser. <br />
-                  <br />
-                  Instruktør: August Aabo Skuespillere Ann Celina Fønsskov,
-                  Sally Klie & Luca Storm Tekniker Niels Eske Juul Andersen
-                  Komponist Simon Klie Lyrik Musa Mijia Scenograf Ida Sofie
-                  Larsen Fotograf Tenzin Olivia Gustenhoff & Liva Bech Holskov
-                  Konsulent: Emil Christiansen
-                </p>
-              </div>
-            </details>
-          </div>
-        </article>
+                      ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
+                        Reserver Plads
+                      </h3>
+                    </a>
 
-        <!-- Re-birth -->
-        <article
-          class="forestilling mb-10 p-3"
-          :class="{'hidden': !(['alledage', 'torsdag', 'fredag'].includes(spilledag) && ['allevenues', 'downunder'].includes(spillested) && ['alleforestillinger', 'rebirth'].includes(forestilling) ) }"
-          x-transition:enter.duration.800ms
-        >
-          <div class="mb-10">
-            <div
-              class="border-bla grid grid-cols-1 border-2 border-solid md:grid-cols-2 lg:grid-cols-3"
-            >
-              <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
-              <!-- kolonne 1 -->
-              <!-- <img src="billeder/mand.webp" alt="" /> -->
-              <!-- kolonne 2 -->
-              <div class="grid gap-5 p-4">
-                <h3>RE-BIRTH</h3>
-                <div class="flex gap-5">
-                  <h4 class="font-bold">Lokation:</h4>
-                  <p>Downunder - Vandkunsten 5, 1467 København, Denmark</p>
-                </div>
-
-                <div class="flex gap-5">
-                  <h4 class="font-bold">Varighed:</h4>
-                  <p>1 time</p>
+                    <p>
+                      OBS! Du skal købe billet for at reservere plads.
+                      <a
+                        class="text-blue-700 underline"
+                        href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
+                        >HER</a
+                      >
+                    </p>
+                  </div>
                 </div>
               </div>
-              <!-- kolonne 3 -->
-              <div class="grid gap-5 p-4">
-                <div class="border-bla border-2 border-solid p-2">
-                  <h4 class="font-bold">Spilletider</h4>
+              <details>
+                <summary class="bg-bla p-2">Læs om stykket</summary>
+                <div class="border-2 border-solid border-bla bg-lysbla p-2">
                   <p>
-                    Tors. d. 4. kl 15:00 & 18:15 & 20:15 &
+                    Find din yoyo frem og sæt dig selv fri i en skov. Det går
+                    godt for de tre roomies med at dele lejlighed, men kæft det
+                    går dårligt med at være mennesker i en nulfejlskultur, hvor
+                    alt handler om meritter og milepælsplaner. Rakel er blevet
+                    droppet af sin eks, Lua kommer bare aldrig videre til
+                    prøverne på Skuespillerskolen og Skjold dater alarmerende
+                    uhyggeligt meget. Ikke flere undvigemanøvre for at blive
+                    stemplet som fiasko. Ikke flere hvide løgne for at være
+                    bedre end man er. Ikke mere pleaser-pis for at rykke op i
+                    sit selvskabte hierarki. Ud med skam og ind med sandhed. Med
+                    inspiration i Shinrin-Yoku, anti-happy-go-lucky-mentalitet,
+                    vigtige venner og svære erkendelser tager Teater Kopfkino os
+                    med på en komisk dannelsesrejse midt i bøvlede
+                    livsprocesser. <br />
                     <br />
-                    Fre. d. 5. kl 15:00 & 18:00 & 20:15
+                    Instruktør: August Aabo Skuespillere Ann Celina Fønsskov,
+                    Sally Klie & Luca Storm Tekniker Niels Eske Juul Andersen
+                    Komponist Simon Klie Lyrik Musa Mijia Scenograf Ida Sofie
+                    Larsen Fotograf Tenzin Olivia Gustenhoff & Liva Bech Holskov
+                    Konsulent: Emil Christiansen
                   </p>
                 </div>
-                <div>
-                  <a
-                    href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                    ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
-                      Reserver Plads
-                    </h3>
-                  </a>
+              </details>
+            </div>
+          </article>
+          <!-- What fires together -->
+          <article
+            class="forestilling mb-10"
+            :class="{'hidden': !(['alledage', 'tirsdag', 'onsdag'].includes(spilledag) && ['allevenues', 'zebu'].includes(spillested) && ['alleforestillinger', 'whatfires'].includes(forestilling) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <div class="mb-10">
+              <div
+                class="grid grid-cols-1 border-2 border-solid border-bla md:grid-cols-2 lg:grid-cols-3"
+              >
+                <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
+                <!-- kolonne 1 -->
+                <img
+                  src="billeder/mand.webp"
+                  alt="What fires together wires together"
+                />
+                <!-- kolonne 2 -->
+                <div class="grid gap-5 p-4">
+                  <h3>What Fires Together Wires Together</h3>
+                  <div class="flex gap-5">
+                    <h4 class="font-bold">Lokation:</h4>
+                    <p>ZeBU - Øresundsvej 4-6, 1 2300 KBH S</p>
+                  </div>
 
-                  <p>
-                    OBS! Du skal købe billet for at reservere plads.
+                  <div class="flex gap-5">
+                    <h4 class="font-bold">Varighed:</h4>
+                    <p>1 time</p>
+                  </div>
+                </div>
+                <!-- kolonne 3 -->
+                <div class="grid gap-5 p-4">
+                  <div class="border-2 border-solid border-bla p-2">
+                    <h4 class="font-bold">Spilletider</h4>
+                    <p>
+                      Tirs. d. 2. kl 16:00 &
+                      <br />
+                      Ons. d. 3. kl 17:30
+                    </p>
+                  </div>
+                  <div>
                     <a
-                      class="text-blue-700 underline"
                       href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                      >HER</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-            <details>
-              <summary class="bg-bla p-2">Læs om stykket</summary>
-              <div class="border-bla bg-lysbla border-2 border-solid p-2">
-                <p>
-                  Find din yoyo frem og sæt dig selv fri i en skov. Det går godt
-                  for de tre roomies med at dele lejlighed, men kæft det går
-                  dårligt med at være mennesker i en nulfejlskultur, hvor alt
-                  handler om meritter og milepælsplaner. Rakel er blevet droppet
-                  af sin eks, Lua kommer bare aldrig videre til prøverne på
-                  Skuespillerskolen og Skjold dater alarmerende uhyggeligt
-                  meget. Ikke flere undvigemanøvre for at blive stemplet som
-                  fiasko. Ikke flere hvide løgne for at være bedre end man er.
-                  Ikke mere pleaser-pis for at rykke op i sit selvskabte
-                  hierarki. Ud med skam og ind med sandhed. Med inspiration i
-                  Shinrin-Yoku, anti-happy-go-lucky-mentalitet, vigtige venner
-                  og svære erkendelser tager Teater Kopfkino os med på en komisk
-                  dannelsesrejse midt i bøvlede livsprocesser. <br />
-                  <br />
-                  Instruktør: August Aabo Skuespillere Ann Celina Fønsskov,
-                  Sally Klie & Luca Storm Tekniker Niels Eske Juul Andersen
-                  Komponist Simon Klie Lyrik Musa Mijia Scenograf Ida Sofie
-                  Larsen Fotograf Tenzin Olivia Gustenhoff & Liva Bech Holskov
-                  Konsulent: Emil Christiansen
-                </p>
-              </div>
-            </details>
-          </div>
-        </article>
+                      ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
+                        Reserver Plads
+                      </h3>
+                    </a>
 
-        <!-- Vild Med Mig -->
-        <article
-          class="forestilling mb-10 p-3"
-          :class="{'hidden': !(['alledage', 'tirsdag', 'onsdag'].includes(spilledag) && ['allevenues', 'vox'].includes(spillested) && ['alleforestillinger', 'vild'].includes(forestilling) ) }"
-          x-transition:enter.duration.800ms
-        >
-          <div class="mb-10">
-            <div
-              class="border-bla grid grid-cols-1 border-2 border-solid md:grid-cols-2 lg:grid-cols-3"
-            >
-              <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
-              <!-- kolonne 1 -->
-              <!-- <img src="billeder/mand.webp" alt="" /> -->
-              <!-- kolonne 2 -->
-              <div class="grid gap-5 p-4">
-                <h3>Vild Med Mig</h3>
-                <div class="flex gap-5">
-                  <h4 class="font-bold">Lokation:</h4>
-                  <p>Vox - Teaterhuset Rådhustræde 13, 1466 KBH K</p>
-                </div>
-
-                <div class="flex gap-5">
-                  <h4 class="font-bold">Varighed:</h4>
-                  <p>1 time</p>
+                    <p>
+                      OBS! Du skal købe billet for at reservere plads.
+                      <a
+                        class="text-blue-700 underline"
+                        href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
+                        >HER</a
+                      >
+                    </p>
+                  </div>
                 </div>
               </div>
-              <!-- kolonne 3 -->
-              <div class="grid gap-5 p-4">
-                <div class="border-bla border-2 border-solid p-2">
-                  <h4 class="font-bold">Spilletider</h4>
+              <details>
+                <summary class="bg-bla p-2">Læs om stykket</summary>
+                <div class="border-2 border-solid border-bla bg-lysbla p-2">
                   <p>
-                    Tirs. d. 2. kl 18:30 &
+                    Find din yoyo frem og sæt dig selv fri i en skov. Det går
+                    godt for de tre roomies med at dele lejlighed, men kæft det
+                    går dårligt med at være mennesker i en nulfejlskultur, hvor
+                    alt handler om meritter og milepælsplaner. Rakel er blevet
+                    droppet af sin eks, Lua kommer bare aldrig videre til
+                    prøverne på Skuespillerskolen og Skjold dater alarmerende
+                    uhyggeligt meget. Ikke flere undvigemanøvre for at blive
+                    stemplet som fiasko. Ikke flere hvide løgne for at være
+                    bedre end man er. Ikke mere pleaser-pis for at rykke op i
+                    sit selvskabte hierarki. Ud med skam og ind med sandhed. Med
+                    inspiration i Shinrin-Yoku, anti-happy-go-lucky-mentalitet,
+                    vigtige venner og svære erkendelser tager Teater Kopfkino os
+                    med på en komisk dannelsesrejse midt i bøvlede
+                    livsprocesser. <br />
                     <br />
-                    Ons. d. 3. kl 16:15 & 20:00
+                    Instruktør: August Aabo Skuespillere Ann Celina Fønsskov,
+                    Sally Klie & Luca Storm Tekniker Niels Eske Juul Andersen
+                    Komponist Simon Klie Lyrik Musa Mijia Scenograf Ida Sofie
+                    Larsen Fotograf Tenzin Olivia Gustenhoff & Liva Bech Holskov
+                    Konsulent: Emil Christiansen
                   </p>
                 </div>
-                <div>
-                  <a
-                    href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                    ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
-                      Reserver Plads
-                    </h3>
-                  </a>
+              </details>
+            </div>
+          </article>
 
-                  <p>
-                    OBS! Du skal købe billet for at reservere plads.
+          <!-- Mand Ligger -->
+          <article
+            class="forestilling mb-10"
+            :class="{'hidden': !(['alledage', 'fredag', 'lordag'].includes(spilledag) && ['allevenues', 'vox'].includes(spillested) && ['alleforestillinger', 'mandligger'].includes(forestilling) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <div class="mb-10">
+              <div
+                class="grid grid-cols-1 border-2 border-solid border-bla md:grid-cols-2 lg:grid-cols-3"
+              >
+                <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
+                <!-- kolonne 1 -->
+                <img
+                  src="billeder/mand.webp"
+                  alt="Mand ligger som mand har redt"
+                />
+                <!-- kolonne 2 -->
+                <div class="grid gap-5 p-4">
+                  <h3>Mand Ligger Som Mand Har Redt</h3>
+                  <div class="flex gap-5">
+                    <h4 class="font-bold">Lokation:</h4>
+                    <p>Vox - Teaterhuset Rådhustræde 13, 1466 KBH K</p>
+                  </div>
+
+                  <div class="flex gap-5">
+                    <h4 class="font-bold">Varighed:</h4>
+                    <p>1 time</p>
+                  </div>
+                </div>
+                <!-- kolonne 3 -->
+                <div class="grid gap-5 p-4">
+                  <div class="border-2 border-solid border-bla p-2">
+                    <h4 class="font-bold">Spilletider</h4>
+                    <p>
+                      Fre. d. 5. kl 19:15 &
+                      <br />
+                      Lør. d. 6. kl 13:00 & 17:30
+                    </p>
+                  </div>
+                  <div>
                     <a
-                      class="text-blue-700 underline"
                       href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                      >HER</a
-                    >
-                  </p>
+                      ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
+                        Reserver Plads
+                      </h3>
+                    </a>
+
+                    <p>
+                      OBS! Du skal købe billet for at reservere plads.
+                      <a
+                        class="text-blue-700 underline"
+                        href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
+                        >HER</a
+                      >
+                    </p>
+                  </div>
                 </div>
               </div>
+              <details>
+                <summary class="bg-bla p-2">Læs om stykket</summary>
+                <div class="border-2 border-solid border-bla bg-lysbla p-2">
+                  <p>
+                    Find din yoyo frem og sæt dig selv fri i en skov. Det går
+                    godt for de tre roomies med at dele lejlighed, men kæft det
+                    går dårligt med at være mennesker i en nulfejlskultur, hvor
+                    alt handler om meritter og milepælsplaner. Rakel er blevet
+                    droppet af sin eks, Lua kommer bare aldrig videre til
+                    prøverne på Skuespillerskolen og Skjold dater alarmerende
+                    uhyggeligt meget. Ikke flere undvigemanøvre for at blive
+                    stemplet som fiasko. Ikke flere hvide løgne for at være
+                    bedre end man er. Ikke mere pleaser-pis for at rykke op i
+                    sit selvskabte hierarki. Ud med skam og ind med sandhed. Med
+                    inspiration i Shinrin-Yoku, anti-happy-go-lucky-mentalitet,
+                    vigtige venner og svære erkendelser tager Teater Kopfkino os
+                    med på en komisk dannelsesrejse midt i bøvlede
+                    livsprocesser. <br />
+                    <br />
+                    Instruktør: August Aabo Skuespillere Ann Celina Fønsskov,
+                    Sally Klie & Luca Storm Tekniker Niels Eske Juul Andersen
+                    Komponist Simon Klie Lyrik Musa Mijia Scenograf Ida Sofie
+                    Larsen Fotograf Tenzin Olivia Gustenhoff & Liva Bech Holskov
+                    Konsulent: Emil Christiansen
+                  </p>
+                </div>
+              </details>
             </div>
-            <details>
-              <summary class="bg-bla p-2">Læs om stykket</summary>
-              <div class="border-bla bg-lysbla border-2 border-solid p-2">
-                <p>
-                  Find din yoyo frem og sæt dig selv fri i en skov. Det går godt
-                  for de tre roomies med at dele lejlighed, men kæft det går
-                  dårligt med at være mennesker i en nulfejlskultur, hvor alt
-                  handler om meritter og milepælsplaner. Rakel er blevet droppet
-                  af sin eks, Lua kommer bare aldrig videre til prøverne på
-                  Skuespillerskolen og Skjold dater alarmerende uhyggeligt
-                  meget. Ikke flere undvigemanøvre for at blive stemplet som
-                  fiasko. Ikke flere hvide løgne for at være bedre end man er.
-                  Ikke mere pleaser-pis for at rykke op i sit selvskabte
-                  hierarki. Ud med skam og ind med sandhed. Med inspiration i
-                  Shinrin-Yoku, anti-happy-go-lucky-mentalitet, vigtige venner
-                  og svære erkendelser tager Teater Kopfkino os med på en komisk
-                  dannelsesrejse midt i bøvlede livsprocesser. <br />
-                  <br />
-                  Instruktør: August Aabo Skuespillere Ann Celina Fønsskov,
-                  Sally Klie & Luca Storm Tekniker Niels Eske Juul Andersen
-                  Komponist Simon Klie Lyrik Musa Mijia Scenograf Ida Sofie
-                  Larsen Fotograf Tenzin Olivia Gustenhoff & Liva Bech Holskov
-                  Konsulent: Emil Christiansen
-                </p>
-              </div>
-            </details>
-          </div>
-        </article>
+          </article>
 
-        <!-- Det Levende Rum -->
-        <article
-          class="forestilling mb-10 p-3"
-          :class="{'hidden': !(['alledage', 'torsdag', 'fredag', 'lordag'].includes(spilledag) && ['allevenues', 'zebu'].includes(spillested) && ['alleforestillinger', 'detlevende'].includes(forestilling) ) }"
-          x-transition:enter.duration.800ms
-        >
-          <div class="mb-10">
-            <div
-              class="border-bla grid grid-cols-1 border-2 border-solid md:grid-cols-2 lg:grid-cols-3"
-            >
-              <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
-              <!-- kolonne 1 -->
-              <!-- <img src="billeder/mand.webp" alt="" /> -->
-              <!-- kolonne 2 -->
-              <div class="grid gap-5 p-4">
-                <h3>Det Levende Rum</h3>
-                <div class="flex gap-5">
-                  <h4 class="font-bold">Lokation:</h4>
-                  <p>Zebu - Øresundsvej 4-6, 1 2300 KBH S</p>
-                </div>
+          <!-- Frygetn for at Leve -->
+          <article
+            class="forestilling mb-10"
+            :class="{'hidden': !(['alledage', 'fredag', 'lordag'].includes(spilledag) && ['allevenues', 'xenon'].includes(spillested) && ['alleforestillinger', 'frygten'].includes(forestilling) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <div class="mb-10">
+              <div
+                class="grid grid-cols-1 border-2 border-solid border-bla md:grid-cols-2 lg:grid-cols-3"
+              >
+                <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
+                <!-- kolonne 1 -->
+                <img src="billeder/mand.webp" alt="Frygten for at leve" />
+                <!-- kolonne 2 -->
+                <div class="grid gap-5 p-4">
+                  <h3>FRYGTEN FOR AT LEVE</h3>
+                  <div class="flex gap-5">
+                    <h4 class="font-bold">Lokation:</h4>
+                    <p>Xenon - Teaterhuset Rådhustræde 13, 1466 KBH K</p>
+                  </div>
 
-                <div class="flex gap-5">
-                  <h4 class="font-bold">Varighed:</h4>
-                  <p>1 time</p>
+                  <div class="flex gap-5">
+                    <h4 class="font-bold">Varighed:</h4>
+                    <p>1 time</p>
+                  </div>
                 </div>
-              </div>
-              <!-- kolonne 3 -->
-              <div class="grid gap-5 p-4">
-                <div class="border-bla border-2 border-solid p-2">
-                  <h4 class="font-bold">Spilletider</h4>
-                  <p>
-                    Tors. d. 4. kl 18:30 &
-                    <br />
-                    Fre. d. 5. kl 18:00 &
-                    <br />
-                    Lør. d. 6. kl 12:45 & 16:15
-                  </p>
-                </div>
-                <div>
-                  <a
-                    href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                    ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
-                      Reserver Plads
-                    </h3>
-                  </a>
-
-                  <p>
-                    OBS! Du skal købe billet for at reservere plads.
+                <!-- kolonne 3 -->
+                <div class="grid gap-5 p-4">
+                  <div class="border-2 border-solid border-bla p-2">
+                    <h4 class="font-bold">Spilletider</h4>
+                    <p>
+                      Fre. d. 5. kl 20:30 &
+                      <br />
+                      Lør. d. 6. kl 12:30 & 14:45
+                    </p>
+                  </div>
+                  <div>
                     <a
-                      class="text-blue-700 underline"
                       href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                      >HER</a
-                    >
-                  </p>
+                      ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
+                        Reserver Plads
+                      </h3>
+                    </a>
+
+                    <p>
+                      OBS! Du skal købe billet for at reservere plads.
+                      <a
+                        class="text-blue-700 underline"
+                        href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
+                        >HER</a
+                      >
+                    </p>
+                  </div>
                 </div>
               </div>
+              <details>
+                <summary class="bg-bla p-2">Læs om stykket</summary>
+                <div class="border-2 border-solid border-bla bg-lysbla p-2">
+                  <p>
+                    Find din yoyo frem og sæt dig selv fri i en skov. Det går
+                    godt for de tre roomies med at dele lejlighed, men kæft det
+                    går dårligt med at være mennesker i en nulfejlskultur, hvor
+                    alt handler om meritter og milepælsplaner. Rakel er blevet
+                    droppet af sin eks, Lua kommer bare aldrig videre til
+                    prøverne på Skuespillerskolen og Skjold dater alarmerende
+                    uhyggeligt meget. Ikke flere undvigemanøvre for at blive
+                    stemplet som fiasko. Ikke flere hvide løgne for at være
+                    bedre end man er. Ikke mere pleaser-pis for at rykke op i
+                    sit selvskabte hierarki. Ud med skam og ind med sandhed. Med
+                    inspiration i Shinrin-Yoku, anti-happy-go-lucky-mentalitet,
+                    vigtige venner og svære erkendelser tager Teater Kopfkino os
+                    med på en komisk dannelsesrejse midt i bøvlede
+                    livsprocesser. <br />
+                    <br />
+                    Instruktør: August Aabo Skuespillere Ann Celina Fønsskov,
+                    Sally Klie & Luca Storm Tekniker Niels Eske Juul Andersen
+                    Komponist Simon Klie Lyrik Musa Mijia Scenograf Ida Sofie
+                    Larsen Fotograf Tenzin Olivia Gustenhoff & Liva Bech Holskov
+                    Konsulent: Emil Christiansen
+                  </p>
+                </div>
+              </details>
             </div>
-            <details>
-              <summary class="bg-bla p-2">Læs om stykket</summary>
-              <div class="border-bla bg-lysbla border-2 border-solid p-2">
-                <p>
-                  Find din yoyo frem og sæt dig selv fri i en skov. Det går godt
-                  for de tre roomies med at dele lejlighed, men kæft det går
-                  dårligt med at være mennesker i en nulfejlskultur, hvor alt
-                  handler om meritter og milepælsplaner. Rakel er blevet droppet
-                  af sin eks, Lua kommer bare aldrig videre til prøverne på
-                  Skuespillerskolen og Skjold dater alarmerende uhyggeligt
-                  meget. Ikke flere undvigemanøvre for at blive stemplet som
-                  fiasko. Ikke flere hvide løgne for at være bedre end man er.
-                  Ikke mere pleaser-pis for at rykke op i sit selvskabte
-                  hierarki. Ud med skam og ind med sandhed. Med inspiration i
-                  Shinrin-Yoku, anti-happy-go-lucky-mentalitet, vigtige venner
-                  og svære erkendelser tager Teater Kopfkino os med på en komisk
-                  dannelsesrejse midt i bøvlede livsprocesser. <br />
-                  <br />
-                  Instruktør: August Aabo Skuespillere Ann Celina Fønsskov,
-                  Sally Klie & Luca Storm Tekniker Niels Eske Juul Andersen
-                  Komponist Simon Klie Lyrik Musa Mijia Scenograf Ida Sofie
-                  Larsen Fotograf Tenzin Olivia Gustenhoff & Liva Bech Holskov
-                  Konsulent: Emil Christiansen
-                </p>
-              </div>
-            </details>
-          </div>
-        </article>
+          </article>
 
-        <p id="ingenforestillinger" class="hidden">
-          Ingen forestillinger - prøv et nyt tid og sted:-)
-        </p>
+          <!-- Re-birth -->
+          <article
+            class="forestilling mb-10"
+            :class="{'hidden': !(['alledage', 'torsdag', 'fredag'].includes(spilledag) && ['allevenues', 'downunder'].includes(spillested) && ['alleforestillinger', 'rebirth'].includes(forestilling) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <div class="mb-10">
+              <div
+                class="grid grid-cols-1 border-2 border-solid border-bla md:grid-cols-2 lg:grid-cols-3"
+              >
+                <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
+                <!-- kolonne 1 -->
+                <img src="billeder/mand.webp" alt="Re-birth" />
+                <!-- kolonne 2 -->
+                <div class="grid gap-5 p-4">
+                  <h3>RE-BIRTH</h3>
+                  <div class="flex gap-5">
+                    <h4 class="font-bold">Lokation:</h4>
+                    <p>Downunder - Vandkunsten 5, 1467 København, Denmark</p>
+                  </div>
+
+                  <div class="flex gap-5">
+                    <h4 class="font-bold">Varighed:</h4>
+                    <p>1 time</p>
+                  </div>
+                </div>
+                <!-- kolonne 3 -->
+                <div class="grid gap-5 p-4">
+                  <div class="border-2 border-solid border-bla p-2">
+                    <h4 class="font-bold">Spilletider</h4>
+                    <p>
+                      Tors. d. 4. kl 15:00 & 18:15 & 20:15 &
+                      <br />
+                      Fre. d. 5. kl 15:00 & 18:00 & 20:15
+                    </p>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
+                      ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
+                        Reserver Plads
+                      </h3>
+                    </a>
+
+                    <p>
+                      OBS! Du skal købe billet for at reservere plads.
+                      <a
+                        class="text-blue-700 underline"
+                        href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
+                        >HER</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <details>
+                <summary class="bg-bla p-2">Læs om stykket</summary>
+                <div class="border-2 border-solid border-bla bg-lysbla p-2">
+                  <p>
+                    Find din yoyo frem og sæt dig selv fri i en skov. Det går
+                    godt for de tre roomies med at dele lejlighed, men kæft det
+                    går dårligt med at være mennesker i en nulfejlskultur, hvor
+                    alt handler om meritter og milepælsplaner. Rakel er blevet
+                    droppet af sin eks, Lua kommer bare aldrig videre til
+                    prøverne på Skuespillerskolen og Skjold dater alarmerende
+                    uhyggeligt meget. Ikke flere undvigemanøvre for at blive
+                    stemplet som fiasko. Ikke flere hvide løgne for at være
+                    bedre end man er. Ikke mere pleaser-pis for at rykke op i
+                    sit selvskabte hierarki. Ud med skam og ind med sandhed. Med
+                    inspiration i Shinrin-Yoku, anti-happy-go-lucky-mentalitet,
+                    vigtige venner og svære erkendelser tager Teater Kopfkino os
+                    med på en komisk dannelsesrejse midt i bøvlede
+                    livsprocesser. <br />
+                    <br />
+                    Instruktør: August Aabo Skuespillere Ann Celina Fønsskov,
+                    Sally Klie & Luca Storm Tekniker Niels Eske Juul Andersen
+                    Komponist Simon Klie Lyrik Musa Mijia Scenograf Ida Sofie
+                    Larsen Fotograf Tenzin Olivia Gustenhoff & Liva Bech Holskov
+                    Konsulent: Emil Christiansen
+                  </p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <!-- Vild Med Mig -->
+          <article
+            class="forestilling mb-10"
+            :class="{'hidden': !(['alledage', 'tirsdag', 'onsdag'].includes(spilledag) && ['allevenues', 'vox'].includes(spillested) && ['alleforestillinger', 'vild'].includes(forestilling) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <div class="mb-10">
+              <div
+                class="grid grid-cols-1 border-2 border-solid border-bla md:grid-cols-2 lg:grid-cols-3"
+              >
+                <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
+                <!-- kolonne 1 -->
+                <img src="billeder/mand.webp" alt="Vild med mig" />
+                <!-- kolonne 2 -->
+                <div class="grid gap-5 p-4">
+                  <h3>Vild Med Mig</h3>
+                  <div class="flex gap-5">
+                    <h4 class="font-bold">Lokation:</h4>
+                    <p>Vox - Teaterhuset Rådhustræde 13, 1466 KBH K</p>
+                  </div>
+
+                  <div class="flex gap-5">
+                    <h4 class="font-bold">Varighed:</h4>
+                    <p>1 time</p>
+                  </div>
+                </div>
+                <!-- kolonne 3 -->
+                <div class="grid gap-5 p-4">
+                  <div class="border-2 border-solid border-bla p-2">
+                    <h4 class="font-bold">Spilletider</h4>
+                    <p>
+                      Tirs. d. 2. kl 18:30 &
+                      <br />
+                      Ons. d. 3. kl 16:15 & 20:00
+                    </p>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
+                      ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
+                        Reserver Plads
+                      </h3>
+                    </a>
+
+                    <p>
+                      OBS! Du skal købe billet for at reservere plads.
+                      <a
+                        class="text-blue-700 underline"
+                        href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
+                        >HER</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <details>
+                <summary class="bg-bla p-2">Læs om stykket</summary>
+                <div class="border-2 border-solid border-bla bg-lysbla p-2">
+                  <p>
+                    Find din yoyo frem og sæt dig selv fri i en skov. Det går
+                    godt for de tre roomies med at dele lejlighed, men kæft det
+                    går dårligt med at være mennesker i en nulfejlskultur, hvor
+                    alt handler om meritter og milepælsplaner. Rakel er blevet
+                    droppet af sin eks, Lua kommer bare aldrig videre til
+                    prøverne på Skuespillerskolen og Skjold dater alarmerende
+                    uhyggeligt meget. Ikke flere undvigemanøvre for at blive
+                    stemplet som fiasko. Ikke flere hvide løgne for at være
+                    bedre end man er. Ikke mere pleaser-pis for at rykke op i
+                    sit selvskabte hierarki. Ud med skam og ind med sandhed. Med
+                    inspiration i Shinrin-Yoku, anti-happy-go-lucky-mentalitet,
+                    vigtige venner og svære erkendelser tager Teater Kopfkino os
+                    med på en komisk dannelsesrejse midt i bøvlede
+                    livsprocesser. <br />
+                    <br />
+                    Instruktør: August Aabo Skuespillere Ann Celina Fønsskov,
+                    Sally Klie & Luca Storm Tekniker Niels Eske Juul Andersen
+                    Komponist Simon Klie Lyrik Musa Mijia Scenograf Ida Sofie
+                    Larsen Fotograf Tenzin Olivia Gustenhoff & Liva Bech Holskov
+                    Konsulent: Emil Christiansen
+                  </p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <!-- Det Levende Rum -->
+          <article
+            class="forestilling mb-10"
+            :class="{'hidden': !(['alledage', 'torsdag', 'fredag', 'lordag'].includes(spilledag) && ['allevenues', 'zebu'].includes(spillested) && ['alleforestillinger', 'detlevende'].includes(forestilling) ) }"
+            x-transition:enter.duration.800ms
+          >
+            <div class="mb-10">
+              <div
+                class="grid grid-cols-1 border-2 border-solid border-bla md:grid-cols-2 lg:grid-cols-3"
+              >
+                <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
+                <!-- kolonne 1 -->
+                <img src="billeder/mand.webp" alt="Det levende rum" />
+                <!-- kolonne 2 -->
+                <div class="grid gap-5 p-4">
+                  <h3>DET LEVENDE RUM</h3>
+                  <div class="flex gap-5">
+                    <h4 class="font-bold">Lokation:</h4>
+                    <p>Zebu - Øresundsvej 4-6, 1 2300 KBH S</p>
+                  </div>
+
+                  <div class="flex gap-5">
+                    <h4 class="font-bold">Varighed:</h4>
+                    <p>1 time</p>
+                  </div>
+                </div>
+                <!-- kolonne 3 -->
+                <div class="grid gap-5 p-4">
+                  <div class="border-2 border-solid border-bla p-2">
+                    <h4 class="font-bold">Spilletider</h4>
+                    <p>
+                      Tors. d. 4. kl 18:30 &
+                      <br />
+                      Fre. d. 5. kl 18:00 &
+                      <br />
+                      Lør. d. 6. kl 12:45 & 16:15
+                    </p>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
+                      ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
+                        Reserver Plads
+                      </h3>
+                    </a>
+
+                    <p>
+                      OBS! Du skal købe billet for at reservere plads.
+                      <a
+                        class="text-blue-700 underline"
+                        href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
+                        >HER</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <details>
+                <summary class="bg-bla p-2">Læs om stykket</summary>
+                <div class="border-2 border-solid border-bla bg-lysbla p-2">
+                  <p>
+                    Find din yoyo frem og sæt dig selv fri i en skov. Det går
+                    godt for de tre roomies med at dele lejlighed, men kæft det
+                    går dårligt med at være mennesker i en nulfejlskultur, hvor
+                    alt handler om meritter og milepælsplaner. Rakel er blevet
+                    droppet af sin eks, Lua kommer bare aldrig videre til
+                    prøverne på Skuespillerskolen og Skjold dater alarmerende
+                    uhyggeligt meget. Ikke flere undvigemanøvre for at blive
+                    stemplet som fiasko. Ikke flere hvide løgne for at være
+                    bedre end man er. Ikke mere pleaser-pis for at rykke op i
+                    sit selvskabte hierarki. Ud med skam og ind med sandhed. Med
+                    inspiration i Shinrin-Yoku, anti-happy-go-lucky-mentalitet,
+                    vigtige venner og svære erkendelser tager Teater Kopfkino os
+                    med på en komisk dannelsesrejse midt i bøvlede
+                    livsprocesser. <br />
+                    <br />
+                    Instruktør: August Aabo Skuespillere Ann Celina Fønsskov,
+                    Sally Klie & Luca Storm Tekniker Niels Eske Juul Andersen
+                    Komponist Simon Klie Lyrik Musa Mijia Scenograf Ida Sofie
+                    Larsen Fotograf Tenzin Olivia Gustenhoff & Liva Bech Holskov
+                    Konsulent: Emil Christiansen
+                  </p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <p id="ingenforestillinger" class="hidden">
+            Ingen forestillinger - prøv et nyt tid og sted:-)
+          </p>
+        </section>
       </section>
-            
+    </main>
     <!-- footeren -->
     <footer class="bg-bla">
       <div
@@ -814,21 +830,22 @@
         </p>
       </div>
     </footer>
+
     <script type="module" src="./main.js">
-        function ingenforestillinger() {
-            const skjulteforestillinger = document.querySelectorAll(
-              ".forestilling.hidden"
-            ).length;
-            if (skjulteforestillinger === 7) {
-              document
-                .querySelector("#ingenforestillinger")
-                .classList.remove("hidden");
-            } else {
-              document
-                .querySelector("#ingenforestillinger")
-                .classList.add("hidden");
-            }
+      function ingenforestillinger() {
+          const skjulteforestillinger = document.querySelectorAll(
+            ".forestilling.hidden"
+          ).length;
+          if (skjulteforestillinger === 7) {
+            document
+              .querySelector("#ingenforestillinger")
+              .classList.remove("hidden");
+          } else {
+            document
+              .querySelector("#ingenforestillinger")
+              .classList.add("hidden");
           }
+        }
     </script>
   </body>
 </html>

@@ -8,64 +8,157 @@
     <title>Vildskud Festival</title>
   </head>
   <header class="bg-bla">
-    <nav class="flex justify-between gap-8 p-8">
-      <div>
+    <div x-data="{ isOpen: false }" class="flex justify-between bg-bla p-4">
+      <!-- header right section -->
+      <div class="flex items-center">
         <span>
           <a href="index.html"
-            ><img class="w-40" src="billeder/vildskudlogo.svg" alt="" /></a
+            ><img
+              class="mx-4 w-44 p-1 lg:w-60"
+              src="billeder/vildskudlogo.svg"
+              alt="vildskudlogo" /></a
         ></span>
       </div>
-      <ul class="gap-5 text-xl lg:flex lg:flex-nowrap">
-        <li><a href="koebbillet.html">Køb Billet</a></li>
-        <li><a href="forestillinger.html">Forestillinger</a></li>
-        <li><a href="spilletider.html">Spilletider</a></li>
-        <li><a href="vaermed.html">Vær med</a></li>
-      </ul>
-    </nav>
+
+      <!-- left header section -->
+      <div
+        class="flex flex-col place-items-end justify-between pt-6 pr-4 lg:pr-8 lg:pt-0"
+      >
+        <button @click="isOpen = !isOpen" type="submit">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-white lg:hidden"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        <div class="hidden space-x-14 lg:inline-block">
+          <a href="koebbillet.html" class="text-lg hover:text-gul"
+            >Køb billet</a
+          >
+          <a href="forestillinger.html" class="text-lg hover:text-gul"
+            >Forestillinger</a
+          >
+          <a href="spilletider.html" class="text-lg hover:text-gul"
+            >Spilletider</a
+          >
+          <a href="vaermed.html" class="text-lg hover:text-gul">Vær med</a>
+        </div>
+
+        <!-- mobile navbar -->
+        <div class="mobile-navbar">
+          <!-- navbar wrapper -->
+          <div
+            class="fixed left-80 top-24 h-52 w-full rounded-sm bg-white p-2 drop-shadow-xl"
+            x-show="isOpen"
+            @click.away=" isOpen = false"
+          >
+            <div class="flex flex-col space-y-4">
+              <a href="koebbillet.html" class="text-md p-1 hover:bg-slate-200"
+                >Køb billet</a
+              >
+              <a
+                href="forestillinger.html"
+                class="text-md p-1 hover:bg-slate-200"
+                >Forestillinger</a
+              >
+              <a href="spilletider.html" class="text-md p-1 hover:bg-slate-200"
+                >Spilletider</a
+              >
+              <a href="vaermed.html" class="text-md p-1 hover:bg-slate-200"
+                >Vær med</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- mobile navbar slut -->
+      </div>
+    </div>
   </header>
-  <body class="grid">
+  <body class="">
+    <!-- herosection -->
+
     <main class="">
-      <section class="bg-red-100 text-center">
-        <div
-          class="grid gap-14 bg-[url('/billeder/forside.svg')] bg-cover bg-no-repeat pb-10 pt-10 font-bold backdrop-invert backdrop-opacity-20"
-        >
-          <h1 class="text-white">Vildskud Festival</h1>
-          <h2 class="mx-10 text-white">
-            TEATERSTYKKER, PERFORMANCES, WORKSHOPS, FESTER, BÆREDYGTIGHED OG
-            MEGET MERE
-          </h2>
-          <h2 class="text-white">D. 2. - 6. august</h2>
-          <div class="">
-            <a href="koebbillet.html" class="px-14"
-              ><h2 class="bg-gul pt-2 pb-2 drop-shadow-lg">Køb Billet</h2></a
+      <section class="bg-[url('/billeder/forside.svg')] bg-cover bg-no-repeat">
+        <div class="flex flex-col gap-14 bg-slate-700/70 pb-14">
+          <div class="m-10 max-w-3xl place-self-center text-center">
+            <h1 class="text-6xl text-white">Vildskud Festival</h1>
+            <h2 class="leading-10 text-white">
+              TEATERSTYKKER, PERFORMANCES, WORKSHOPS, FESTER, BÆREDYGTIGHED OG
+              MEGET MERE
+            </h2>
+            <h2 class="text-white">D. 2. - 6. august</h2>
+          </div>
+          <div
+            class="grid w-44 place-self-center rounded-sm bg-gul py-3 hover:opacity-60"
+          >
+            <a href="forestillinger.html" class="text-center text-lg font-bold"
+              >Se programmet</a
+            >
+          </div>
+          <div
+            class="grid w-44 place-self-center rounded-sm bg-gul py-3 hover:opacity-60"
+          >
+            <a href="koebbillet.html" class="text-center text-lg font-bold"
+              >Køb Billet</a
             >
           </div>
         </div>
       </section>
     </main>
-    <footer
-      class="grid grid-cols-2 justify-evenly gap-10 bg-bla p-10 lg:flex lg:flex-row"
-    >
-      <div>
-        <h4 class="font-bold">Samarbejdspartnere</h4>
-        <h4>Venues</h4>
-        <h4>Sponsorere</h4>
+
+    <!-- footeren -->
+
+    <footer class="bg-bla">
+      <div
+        class="grid grid-cols-2 gap-14 p-10 lg:flex lg:flex-row lg:justify-evenly"
+      >
+        <div>
+          <h4 class="font-bold">Samarbejdspartnere</h4>
+          <h4>Venues</h4>
+          <h4>Sponsorere</h4>
+        </div>
+        <div>
+          <h4 class="font-bold">Om Vildskud</h4>
+          <h4>Om os</h4>
+          <h4>Cookiepolitik</h4>
+          <h4>Privatlivspolitik</h4>
+          <h4>Handelsbetingelser</h4>
+          <h4>Sitemap</h4>
+        </div>
+        <div>
+          <h4 class="font-bold">Find os</h4>
+          <h4>Kontakt os</h4>
+        </div>
+
+        <div class="flex gap-8">
+          <a href="#0"
+            ><img
+              class="h-12 w-12"
+              src="/billeder/facebook.svg"
+              alt="facebook ikon"
+          /></a>
+
+          <a href="#0"
+            ><img
+              class="h-12 w-12"
+              src="billeder/instagram.svg"
+              alt="instagram ikon"
+          /></a>
+        </div>
       </div>
       <div>
-        <h4 class="font-bold">Om Vildskud</h4>
-        <h4>Om os</h4>
-        <h4>Cookiepolitik</h4>
-        <h4>Privatlivspolitik</h4>
-        <h4>Handelsbetingelser</h4>
-        <h4>Sitemap</h4>
-      </div>
-      <div>
-        <h4 class="font-bold">Find os</h4>
-        <h4>Kontakt os</h4>
-      </div>
-      <div>
-        <h4>Facebook</h4>
-        <h4>Instagram</h4>
+        <p class="m-0 flex justify-center p-2 text-sm">
+          Copyright © 2022 | Lunefuld.dk | CVR.nr.: 12 34 56 78
+        </p>
       </div>
     </footer>
     <script type="module" src="./main.js"></script>

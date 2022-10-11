@@ -12,7 +12,7 @@
       <section class="mb-10">
         <h1>Billet til Vildskud festival</h1>
         <h2>
-          Kom og vær med fra d. 2.–6. aug. når Vildskud festivalen løber af
+          Kom og vær med fra d. 2.– 6. aug. når Vildskud festivalen løber af
           stablen.
         </h2>
         <p>
@@ -43,12 +43,165 @@
           <summary
             class="border-2 border-solid border-bla p-2 text-2xl font-bold"
           >
-            Køb billet
+            Køb endagsbillet
+          </summary>
+          <div class="border-2 border-solid border-bla bg-lysbla p-2">
+            <main
+              class="mb-8 p-8 pb-4"
+              id="step"
+              x-data="{ step: 'step1', billettype: 'both', køb_billet: '1', howoften : 'weekly', amount : '4'}"
+            >
+              <header class="border-b border-slate-500 pt-4 pb-8">
+                <ul class="">
+                  <li
+                    class="inline pr-2"
+                    :class="{'border-black border-b': step === 'step1' }"
+                  >
+                    1: Vælg dato
+                  </li>
+                  <li
+                    class="inline pr-2"
+                    :class="{'border-black border-b': step === 'step2' }"
+                  >
+                    2: Bestil billet
+                  </li>
+                </ul>
+              </header>
+
+              <section class="border-b border-slate-500 py-8">
+                <!-- step 1 -->
+                <div id="step1" x-show="step === 'step1'">
+                  <p class="mb-4">
+                    Hvilken dato vil du købe din endagsbillet til?
+                  </p>
+                  <form id="winesubscriptionform" class="">
+                    <div>
+                      <input
+                        type="radio"
+                        id="enkelt"
+                        name="Endagsbillet"
+                        value="enkelt"
+                        x-model="Endagsbillet"
+                      />
+                      <label for="red">D. 2 aug.</label>
+                    </div>
+
+                    <div>
+                      <input
+                        type="radio"
+                        id="partou"
+                        name="Partoutbillet"
+                        value="partou"
+                        x-model="Partoutbillet"
+                      />
+                      <label for="both">D. 3 aug.</label>
+                    </div>
+                    <div>
+                      <input
+                        type="radio"
+                        id="partou"
+                        name="Partoutbillet"
+                        value="partou"
+                        x-model="Partoutbillet"
+                      />
+                      <label for="both">D. 4 aug.</label>
+                    </div>
+                    <div>
+                      <input
+                        type="radio"
+                        id="partou"
+                        name="Partoutbillet"
+                        value="partou"
+                        x-model="Partoutbillet"
+                      />
+                      <label for="both">D. 5 aug.</label>
+                    </div>
+                    <div>
+                      <input
+                        type="radio"
+                        id="partou"
+                        name="Partoutbillet"
+                        value="partou"
+                        x-model="Partoutbillet"
+                      />
+                      <label for="both">D. 6 aug.</label>
+                    </div>
+                  </form>
+                </div>
+                <!-- step 2-->
+                <div id="step2" x-show="step === 'step2'">
+                  <p>Køb din Endagsbillet.</p>
+                  <label for="quantity"
+                    >Når du trykker på knappen kommer du ind på yourticket, hvor
+                    du køber din endagsbillet.</label
+                  >
+                  <div
+                    class="grid w-44 place-self-center rounded-sm bg-gul py-3 drop-shadow-xl hover:opacity-60"
+                  >
+                    <a
+                      href="https://www.yourticket.dk/arrangementer/?s=vildskud%20festival&fbclid=IwAR0KdjK74bhGl-SLxRNBaDkA9LAcKgAZkUuUynzFw9oyu8DwOueg3vxfkQk"
+                      class="text-center text-lg font-bold"
+                      >Køb Billet</a
+                    >
+                  </div>
+                </div>
+              </section>
+
+              <footer class="flex justify-between py-8">
+                <div class="">
+                  <button
+                    id="knap2"
+                    class="border-2 border-bla p-2"
+                    x-on:click="step = 'step1'"
+                    x-show="step === 'step2'"
+                  >
+                    &LeftArrow; Dato
+                  </button>
+                  <button
+                    id="knap3"
+                    class="border-2 border-bla p-2"
+                    x-on:click="step = 'step2'"
+                    x-show="step === 'step3'"
+                  >
+                    &LeftArrow; Bestil billet
+                  </button>
+                </div>
+                <div class="">
+                  <button
+                    id="knap2"
+                    class="border-2 border-bla p-2"
+                    x-on:click="step = 'step2'"
+                    x-show="step === 'step1'"
+                  >
+                    Bestil billet &RightArrow;
+                  </button>
+                </div>
+              </footer>
+            </main>
+          </div>
+        </details>
+
+        <details>
+          <summary
+            class="border-2 border-solid border-bla p-2 text-2xl font-bold"
+          >
+            Køb Partoutbillet
           </summary>
           <div class="border-2 border-solid border-bla bg-lysbla p-2">
             <div>
-              <h3>Step 1: Vælg billettype</h3>
-              <p></p>
+              <p>
+                Køb din partoutbillet her og gå herefter ind og reserver plads
+                ved hjælp at din voucher kode.
+              </p>
+            </div>
+            <div
+              class="grid w-44 place-self-center rounded-sm bg-gul py-3 drop-shadow-xl hover:opacity-60"
+            >
+              <a
+                href="https://www.yourticket.dk/arrangementer/?s=vildskud%20festival&fbclid=IwAR0KdjK74bhGl-SLxRNBaDkA9LAcKgAZkUuUynzFw9oyu8DwOueg3vxfkQk"
+                class="text-center text-lg font-bold"
+                >Køb Partoutbillet</a
+              >
             </div>
           </div>
         </details>

@@ -7,6 +7,43 @@
     <meta name="robots" content="noindex" />
     <title>Vildskud Festival</title>
   </head>
+  <!-- cookieboks -->
+  <div class="sticky top-1/2" id="cookieboks">
+    <div
+      class="absolute right-0 grid max-w-lg place-items-center bg-offwhite p-10"
+    >
+      <div class="">
+        <h3 class="text-lg font-bold">Vi anvender Cookies</h3>
+        <p>
+          Vildskud.dk anvender cookies for at kunne give dig den bedste
+          brugeroplevelse på vores hjemmeside, samt til markedsførings- og
+          analytiske formål. Ved at klikke “Accepter og luk” bekræfter du, at du
+          har læst vores cookie politik og accepterer vores brug af cookies.
+          Ønsker du ikke at acceptere, eller vil du læse mere, kan du finde
+          vores politik for brug af cookies
+          <a
+            class="text-blue-900 underline visited:text-purple-700"
+            href="cookiepolitik"
+            >her</a
+          >.
+        </p>
+      </div>
+
+      <div class="flex flex-row justify-center" id="accepter">
+        <button
+          class="m-4 w-36 max-w-[50%] rounded-sm bg-blabla p-2 text-base text-offwhite"
+        >
+          Accepter cookies
+        </button>
+        <button
+          class="m-4 w-36 max-w-[100%] rounded-sm bg-blabla p-2 text-base text-offwhite"
+          id="afvis"
+        >
+          Afvis
+        </button>
+      </div>
+    </div>
+  </div>
   <header class="bg-bla">
     <div x-data="{ isOpen: false }" class="flex justify-between bg-bla p-4">
       <!-- header right section -->

@@ -110,12 +110,12 @@
       <section
         class=""
         id="step"
-        x-data="{ spilledag: 'alledage', spillested: 'allevenues', forestilling: 'alleforestillinger', skjulteforestillinger : 0 }"
+        x-data="{spilledag: 'alledage', spillested: 'allevenues', forestilling: 'alleforestillinger', skjulteforestillinger : 0 }"
       >
         <div class="">
           <!-- Styling af filterknapperne på form-->
           <form id="filtre" class="col grid-col grid gap-10 md:flex">
-            <div class=":border-bla lg:border-2 lg:border-solid">
+            <div class="lg:border-2 lg:border-solid lg:border-bla">
               <label for="spilledag"></label>
               <select
                 name="spilledag"
@@ -159,7 +159,13 @@
                 form="filtre"
                 x-on:change="$nextTick(() => { ingenforestillinger() });"
               >
-                <option value="alleforestillinger">Alle forestillinger</option>
+                <option
+                  x-data="{url:'{{route('dog', ['dog'=>selectedDog])}}',}"
+                  href="{{route('dog', ['dog'=>selectedDog])}}"
+                  value="alleforestillinger"
+                >
+                  Alle forestillinger
+                </option>
                 <option value="gogo">GO GO YO-Yoko</option>
                 <option value="whatfires">
                   What Fires Together Wires Together
@@ -179,6 +185,7 @@
         <section class="forestillinger gap-3 py-8">
           <!-- go go yo-yoko -->
           <article
+            id="gogo"
             class="forestilling mb-10"
             :class="{'hidden': !(['alledage', 'torsdag', 'fredag'].includes(spilledag) && ['allevenues', 'xenon'].includes(spillested) && ['alleforestillinger', 'gogo'].includes(forestilling) ) }"
             x-transition:enter.duration.800ms
@@ -832,7 +839,9 @@
           <h4 class="text-offwhite">Cookiepolitik</h4>
           <h4 class="text-offwhite">Privatlivspolitik</h4>
           <h4 class="text-offwhite">Handelsbetingelser</h4>
-          <h4 class="text-offwhite">Sitemap</h4>
+          <h4>
+            <a class="text-offwhite" href="sitemap.html">Sitemap</a>
+          </h4>
         </div>
         <div>
           <h4 class="font-bold text-offwhite">Find os</h4>

@@ -90,7 +90,7 @@
     </div>
   </header>
   <body class="">
-    <main class="mx-10 lg:mx-64">
+    <main class="mx-10 lg:mx-80">
       <!-- om tekst -->
       <section class="mb-10">
         <h1 class="lg:text-center">Forestillinger</h1>
@@ -369,10 +369,8 @@
             :class="{'hidden': !(['alledage', 'fredag', 'lordag'].includes(spilledag) && ['allevenues', 'vox'].includes(spillested) && ['alleforestillinger', 'mandligger'].includes(forestilling) ) }"
             x-transition:enter.duration.800ms
           >
-            <div class="mb-10">
-              <div
-                class="grid grid-cols-1 border-2 border-solid border-bla md:grid-cols-2 lg:grid-cols-3"
-              >
+            <div class="mb-10 border-2 border-solid border-bla">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
                 <!-- kolonne 1 -->
                 <div class="mx-auto mb-5 md:mt-5 lg:mx-5">

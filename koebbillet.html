@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Vildskud Festival - Køb billet</title>
+    <script type="module" crossorigin src="./assets/main.4df40dc6.js"></script>
+    <link rel="stylesheet" href="./assets/main.f72044c9.css">
+  </head>
+  <header class="bg-bla">
+    <div x-data="{ isOpen: false }" class="flex justify-between bg-bla p-4">
+      <!-- header right section -->
+      <div class="flex items-center">
+        <span>
+          <a href="index.html"
+            ><img
+              class="mx-4 w-44 p-1 lg:w-60"
+              src="./assets/vildskudlogo.69da10ff.svg"
+              alt="vildskudlogo" /></a
+        ></span>
+      </div>
+
+      <!-- left header section -->
+      <div
+        class="flex flex-col place-items-end justify-between pt-6 pr-4 lg:pr-8 lg:pt-0"
+      >
+        <button @click="isOpen = !isOpen" type="submit">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-white lg:hidden"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        <div class="hidden space-x-14 lg:inline-block">
+          <a
+            href="koebbillet.html"
+            class="text-off rounded-sm p-2 text-lg text-offwhite hover:bg-blabla"
+            >Køb billet</a
+          >
+          <a
+            href="forestillinger.html"
+            class="rounded-sm p-2 text-lg text-offwhite hover:bg-blabla"
+            >Forestillinger</a
+          >
+          <a
+            href="spilletider.html"
+            class="rounded-sm p-2 text-lg text-offwhite hover:bg-blabla"
+            >Spilletider</a
+          >
+          <a
+            href="vaermed.html"
+            class="rounded-sm p-2 text-lg text-offwhite hover:bg-blabla"
+            >Vær med</a
+          >
+        </div>
+
+        <!-- mobile navbar -->
+        <div class="mobile-navbar">
+          <!-- navbar wrapper -->
+          <div
+            class="static top-24 h-48 w-full rounded-sm bg-blabla p-2 drop-shadow-xl"
+            x-show="isOpen"
+            @click.away=" isOpen = false"
+          >
+            <div class="flex flex-col space-y-5">
+              <a href="koebbillet.html" class="text-md text-offwhite"
+                >Køb billet</a
+              >
+              <a href="forestillinger.html" class="text-md text-offwhite"
+                >Forestillinger</a
+              >
+              <a href="spilletider.html" class="text-md text-offwhite"
+                >Spilletider</a
+              >
+              <a href="vaermed.html" class="text-md text-offwhite">Vær med</a>
+            </div>
+          </div>
+        </div>
+        <!-- mobile navbar slut -->
+      </div>
+    </div>
+  </header>
+  <body>
+    <main class="mx-10 lg:mx-64">
+      <section class="mb-10">
+        <h1 class="lg:text-center">Billet til Vildskud festival</h1>
+        <h2>
+          Kom og vær med fra d. 2.– 6. aug. når Vildskud festivalen løber af
+          stablen.
+        </h2>
+        <p>
+          Få et væld af oplevelser når den uafhængige scenekunst, byder op med
+          væld af spændende forestillinger. Vi tilbyder endagsbilletter eller
+          partoutbilletter som kan bruges alle festivalen dage. Du køber dine
+          billetter via yourticket.dk
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2>Sådan køber du billet og reseverer plads</h2>
+        <p>
+          Step 1: Vælg mellem endags-eller partoutbillet, og gennemfør køb
+          <br />
+          <br />
+          Step 2: Tjek bekræftelsesmail for voucher kode <br />
+          <br />
+          Step 3: Kig programmet og forestillingerne igennem <br />
+          <br />
+          Step 4: Reserver plads med din voucher kode <br />
+          <br />
+        </p>
+      </section>
+
+      <section class="mb-10 grid gap-5 text-sort">
+        <!-- køb billet -->
+        <details>
+          <summary
+            class="border-2 border-solid border-bla p-2 text-2xl font-bold"
+          >
+            Køb endagsbillet
+          </summary>
+          <div class="border-2 border-solid border-bla bg-lysbla p-2">
+            <main
+              class="mb-8 p-8 pb-4"
+              id="step"
+              x-data="{ step: 'step1', billettype: 'both', køb_billet: '1', howoften : 'weekly', amount : '4'}"
+            >
+              <header class="border-b border-slate-500 pt-4 pb-8">
+                <ul class="">
+                  <li
+                    class="inline pr-2"
+                    :class="{'border-black border-b': step === 'step1' }"
+                  >
+                    1: Vælg dato
+                  </li>
+                  <li
+                    class="inline pr-2"
+                    :class="{'border-black border-b': step === 'step2' }"
+                  >
+                    2: Bestil billet
+                  </li>
+                </ul>
+              </header>
+
+              <section class="border-b border-slate-500 py-8">
+                <!-- step 1 -->
+                <div id="step1" x-show="step === 'step1'">
+                  <p class="mb-4">
+                    Hvilken dato vil du købe din endagsbillet til?
+                  </p>
+                  <form id="winesubscriptionform" class="">
+                    <div>
+                      <input
+                        type="radio"
+                        id="enkelt"
+                        name="Endagsbillet"
+                        value="enkelt"
+                        x-model="Endagsbillet"
+                      />
+                      <label for="red">D. 2 aug.</label>
+                    </div>
+
+                    <div>
+                      <input
+                        type="radio"
+                        id="partou"
+                        name="Partoutbillet"
+                        value="partou"
+                        x-model="Partoutbillet"
+                      />
+                      <label for="both">D. 3 aug.</label>
+                    </div>
+                    <div>
+                      <input
+                        type="radio"
+                        id="partou"
+                        name="Partoutbillet"
+                        value="partou"
+                        x-model="Partoutbillet"
+                      />
+                      <label for="both">D. 4 aug.</label>
+                    </div>
+                    <div>
+                      <input
+                        type="radio"
+                        id="partou"
+                        name="Partoutbillet"
+                        value="partou"
+                        x-model="Partoutbillet"
+                      />
+                      <label for="both">D. 5 aug.</label>
+                    </div>
+                    <div>
+                      <input
+                        type="radio"
+                        id="partou"
+                        name="Partoutbillet"
+                        value="partou"
+                        x-model="Partoutbillet"
+                      />
+                      <label for="both">D. 6 aug.</label>
+                    </div>
+                  </form>
+                </div>
+                <!-- step 2-->
+                <div id="step2" x-show="step === 'step2'">
+                  <p>Køb din Endagsbillet.</p>
+                  <label for="quantity"
+                    >Når du trykker på knappen kommer du ind på yourticket, hvor
+                    du køber din endagsbillet.</label
+                  >
+                  <div
+                    class="grid w-44 place-self-center rounded-sm bg-gul py-3 drop-shadow-xl hover:opacity-60"
+                  >
+                    <a
+                      href="https://www.yourticket.dk/arrangementer/?s=vildskud%20festival&fbclid=IwAR0KdjK74bhGl-SLxRNBaDkA9LAcKgAZkUuUynzFw9oyu8DwOueg3vxfkQk"
+                      class="text-center text-lg font-bold"
+                      >Køb Billet</a
+                    >
+                  </div>
+                </div>
+              </section>
+
+              <footer class="flex justify-between py-8">
+                <div class="">
+                  <button
+                    id="knap2"
+                    class="border-2 border-bla p-2"
+                    x-on:click="step = 'step1'"
+                    x-show="step === 'step2'"
+                  >
+                    &LeftArrow; Dato
+                  </button>
+                  <button
+                    id="knap3"
+                    class="border-2 border-bla p-2"
+                    x-on:click="step = 'step2'"
+                    x-show="step === 'step3'"
+                  >
+                    &LeftArrow; Bestil billet
+                  </button>
+                </div>
+                <div class="">
+                  <button
+                    id="knap2"
+                    class="border-2 border-bla p-2"
+                    x-on:click="step = 'step2'"
+                    x-show="step === 'step1'"
+                  >
+                    Bestil billet &RightArrow;
+                  </button>
+                </div>
+              </footer>
+            </main>
+          </div>
+        </details>
+
+        <details>
+          <summary
+            class="border-2 border-solid border-bla p-2 text-2xl font-bold"
+          >
+            Køb Partoutbillet
+          </summary>
+          <div class="border-2 border-solid border-bla bg-lysbla p-2">
+            <div>
+              <p>
+                Køb din partoutbillet her og gå herefter ind og reserver plads
+                ved hjælp at din voucher kode.
+              </p>
+            </div>
+            <div
+              class="grid w-44 place-self-center rounded-sm bg-gul py-3 drop-shadow-xl hover:opacity-60"
+            >
+              <a
+                href="https://www.yourticket.dk/arrangementer/?s=vildskud%20festival&fbclid=IwAR0KdjK74bhGl-SLxRNBaDkA9LAcKgAZkUuUynzFw9oyu8DwOueg3vxfkQk"
+                class="text-center text-lg font-bold"
+                >Køb Partoutbillet</a
+              >
+            </div>
+          </div>
+        </details>
+
+        <!-- reserver plads -->
+        <details>
+          <summary
+            class="border-2 border-solid border-bla p-2 text-2xl font-bold"
+          >
+            Reserver plads
+          </summary>
+          <div class="border-2 border-solid border-bla bg-lysbla p-2">
+            <div>
+              <p>
+                Når du har bestilt din billet får du en bekræftelsesmail. I
+                denne mail har du modtaget en voucher kode. Du reserverer plads
+                på de ønskede forestillinger der går på dagen eller dagene du
+                har bestilt billet til med din voucher kode.
+              </p>
+            </div>
+            <div>
+              <h4>
+                Reserver plads til forestillingerne
+                <a
+                  class="text-blue-700 underline"
+                  href="https://www.yourticket.dk/arrangementer/?s=vildskud%20festival&fbclid=IwAR0KdjK74bhGl-SLxRNBaDkA9LAcKgAZkUuUynzFw9oyu8DwOueg3vxfkQk"
+                  >HER</a
+                >
+              </h4>
+
+              <h4 class="pt-4">
+                Se spilletider for forestillinger
+                <a class="text-blue-700 underline" href="spilletider.html"
+                  >HER</a
+                >
+              </h4>
+            </div>
+          </div>
+        </details>
+      </section>
+    </main>
+    <!-- footeren -->
+
+    <footer class="bg-bla">
+      <div
+        class="grid grid-cols-2 gap-14 p-10 lg:flex lg:flex-row lg:justify-evenly"
+      >
+        <div>
+          <h4 class="font-bold text-offwhite">Samarbejdspartnere</h4>
+          <h4 class="text-offwhite">Venues</h4>
+          <h4 class="text-offwhite">Sponsorere</h4>
+        </div>
+        <div>
+          <h4 class="font-bold text-offwhite">Om Vildskud</h4>
+          <h4 class="text-offwhite">Om os</h4>
+          <h4 class="text-offwhite">Cookiepolitik</h4>
+          <h4 class="text-offwhite">Privatlivspolitik</h4>
+          <h4 class="text-offwhite">Handelsbetingelser</h4>
+          <h4 class="text-offwhite">Sitemap</h4>
+        </div>
+        <div>
+          <h4 class="font-bold text-offwhite">Find os</h4>
+          <h4 class="text-offwhite">Kontakt os</h4>
+        </div>
+
+        <div class="flex gap-8">
+          <a href="#0"
+            ><img
+              class="h-12 w-12"
+              src="./assets/facebookikon.5998be06.svg"
+              alt="facebook ikon"
+          /></a>
+
+          <a href="#0"
+            ><img
+              class="h-12 w-12"
+              src="./assets/instagramikon.451eeb48.svg"
+              alt="instagram ikon"
+          /></a>
+        </div>
+      </div>
+      <div>
+        <p class="m-0 flex justify-center p-2 text-sm text-offwhite">
+          Copyright © 2022 | Lunefuld.dk | CVR.nr.: 12 34 56 78
+        </p>
+      </div>
+    </footer>
+    
+  </body>
+</html>

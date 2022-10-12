@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Vildskud Festival</title>
+    <script type="module" crossorigin src="./assets/main.4df40dc6.js"></script>
+    <link rel="stylesheet" href="./assets/main.f72044c9.css">
+  </head>
+  <header class="bg-rod">
+    <div x-data="{ isOpen: false }" class="flex justify-between bg-rod p-4">
+      <!-- header right section -->
+      <div class="flex items-center">
+        <span>
+          <a href="index.html"
+            ><img
+              class="mx-4 w-44 p-1 lg:w-60"
+              src="./assets/vildskudlogoblaa.a49b81a1.svg"
+              alt="vildskudlogo" /></a
+        ></span>
+      </div>
+
+      <!-- left header section -->
+      <div
+        class="flex flex-col place-items-end justify-between pt-6 pr-4 lg:pr-8 lg:pt-0"
+      >
+        <button @click="isOpen = !isOpen" type="submit">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-white lg:hidden"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        <div class="hidden space-x-14 lg:inline-block">
+          <a
+            href="koebbillet.html"
+            class="text-off rounded-sm p-2 text-lg text-offwhite hover:bg-mellemrod"
+            >Køb billet</a
+          >
+          <a
+            href="forestillinger.html"
+            class="rounded-sm p-2 text-lg text-offwhite hover:bg-mellemrod"
+            >Forestillinger</a
+          >
+          <a
+            href="spilletider.html"
+            class="rounded-sm p-2 text-lg text-offwhite hover:bg-mellemrod"
+            >Spilletider</a
+          >
+          <a
+            href="vaermed.html"
+            class="rounded-sm p-2 text-lg text-offwhite hover:bg-mellemrod"
+            >Vær med</a
+          >
+        </div>
+
+        <!-- mobile navbar -->
+        <div class="mobile-navbar">
+          <!-- navbar wrapper -->
+          <div
+            class="static top-24 h-48 w-full rounded-sm bg-mellemrod p-2 drop-shadow-xl"
+            x-show="isOpen"
+            @click.away=" isOpen = false"
+          >
+            <div class="flex flex-col space-y-5">
+              <a href="koebbillet.html" class="text-md text-offwhite"
+                >Køb billet</a
+              >
+              <a href="forestillinger.html" class="text-md text-offwhite"
+                >Forestillinger</a
+              >
+              <a href="spilletider.html" class="text-md text-offwhite"
+                >Spilletider</a
+              >
+              <a href="vaermed.html" class="text-md text-offwhite">Vær med</a>
+            </div>
+          </div>
+        </div>
+        <!-- mobile navbar slut -->
+      </div>
+    </div>
+  </header>
+  <body class="">
+    <main class="mx-10 lg:mx-64">
+      <section class="mb-10">
+        <h1 class="lg:text-center">Bliv en del af fællesskabet</h1>
+        <h2 class="">
+          Vær med til at støtte og skabe rum for det afhængige scenekunstmiljø i
+          København.
+        </h2>
+        <p>
+          Vildskud festivalen er 100% drevet af frivillige kræfter og der er
+          altid plads til flere. Vi tager glædeligt imod både sponsorer,
+          frivillige der ønsker at være en del af selve festivalen og
+          selvfølgelig scenekunstnere der ønsker en platform til fremvisning.
+        </p>
+      </section>
+
+      <section class="mb-10 grid gap-5 text-sort">
+        <!-- Bliv frivilig -->
+        <details>
+          <summary
+            class="border-2 border-solid border-bla p-2 text-2xl font-bold"
+          >
+            Bliv Frivilig
+          </summary>
+          <div
+            class="gap-10 border-2 border-solid border-bla bg-lysbla p-10 lg:grid lg:grid-cols-2"
+          >
+            <div>
+              <h3>Vil du være frivillig?</h3>
+              <p>
+                Vildskud Festival er afhængig af, at der hvert år er en masse
+                frivillige, der har lyst til at være med til at gøre festivalen
+                til en god oplevelse for alle deltagende. Alle frivillige får
+                mulighed for at se forestillingerne gratis, får mad under deres
+                vagter og muligheden for at møde en masse teaternørder. Jobbet
+                som frivillig består af 2 vagter på 3-4 timer. Der er et
+                infomøde d. 1. august 2022. Vil du være frivillig, eller har du
+                spørgsmål så skriv til: frivillig@vildskud.dk
+              </p>
+            </div>
+            <div>
+              <h3>Hvordan ansøger man?</h3>
+              <p>
+                VILDSKUD festival søger PR og SOME ansvarlig – det kan blive
+                dig! Vi giver dig kunstnerisk frihed til at danne rammerne for
+                festivalens visuelle udtryk! Du bliver en del af et stærkt
+                kunstnerisk team, som brænder for scenekunsten og festiva- len!
+                Send os en mail på info@vildskud.dk og hør mere! Rødderne – kom
+                og vær med! Bag VILDSKUD står der hvert år et hold af frivillige
+                arrangører. Arrangørgruppen arbejder med en flad struktur og er
+                altid åben for at få flere med. Sammensætningen af gruppen
+                forandrer sig fra år til år og derfor forandrer måden hvorpå
+                arbejdet med festivalen udføres sig også konstant. Ønsker du at
+                være en del af arrangørgruppen til Vildskud Festival 2020? Så
+                send en motiveret ansøgning til info@vildskud.dk. Vi tager imod
+                ansøgninger hele året, så tøv ikke med at kontakte os. Som
+                arrangør i Vildskud kan du få erfaring inden for:
+                Projektledelse, budgetplanlægning, pr-strategier på SoMe
+                platforme, udfoldelse af pressemeddelelser, grafisk design af
+                program og plakater, networking og samarbejde med professionelle
+                scener i København. Planlægning og udvikling af Danmarks største
+                festival for det scenekunstneriske vækstlag!
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- open call -->
+        <details>
+          <summary
+            class="border-2 border-solid border-bla p-2 text-2xl font-bold"
+          >
+            Open Call
+          </summary>
+          <div
+            class="gap-10 border-2 border-solid border-bla bg-lysbla p-10 lg:grid lg:grid-cols-2"
+          >
+            <div>
+              <h3>
+                VILDSKUD Festival fejrer 20års jubilæum – og DU skal optræde!il
+                du/i være med?
+              </h3>
+              <p>
+                VILDSKUD er en fejring af alle former for upcoming scenekunst.
+                Alt fra klassisk teater, udendørs danseoplevelser, storytelling
+                lysshows, musiske sanseoplevelser – kun fantasien sætter
+                grænser! Den 2.-6. august giver jer spirene scenekunstnere en
+                platform at udfolde og udvikle jeres forestillinger på med
+                mulighed for at vinde lækre priser, få sparring med dygtige
+                dramaturger, vise jeres færdigheder til det professionelle
+                scenekunstlag og anmeldere, samt udvide jeres netværk. Lyder det
+                som noget for dig/jer?
+              </p>
+            </div>
+            <div>
+              <h3>Hvordan ansøger man?</h3>
+              <p>
+                Ansøgningsprocessen er en todelt affære; hvor du først udfylder
+                og indsender en ansøgningsblanket. Ansøgningsblanketten skal du
+                sende per mail til info@vildskud.dk senest 1. april 2022, kl.
+                18.00. Herefter vil du blive indkaldt til showcases, som ligger
+                i weekenden 23-23 april 2022.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- Bliv sponsor -->
+        <details>
+          <summary
+            class="border-2 border-solid border-bla p-2 text-2xl font-bold"
+          >
+            Bliv Sponsor
+          </summary>
+          <div
+            class="gap-10 border-2 border-solid border-bla bg-lysbla p-10 lg:grid lg:grid-cols-2"
+          >
+            <div>
+              <h3>Vil du være sponsor?</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                sit amet leo massa. Nam molestie mollis elit, nec blandit nisl.
+                Proin molestie in felis non elementum. Sed eu tellus in mauris
+                ullamcorper ullamcorper. Praesent dictum mauris at odio luctus,
+                ut rutrum justo facilisis. Sed in placerat nunc, in tristique
+                nisl. Aenean porta vulputate sapien, vitae iaculis sapien
+                ullamcorper quis. Ut sit amet volutpat tortor, at dictum mi.
+                Class aptent taciti sociosqu ad litora torquent per conubia
+                nostra, per inceptos himenaeos. Duis aliquam nibh ornare,
+                viverra eros eu, blandit ligula. Fusce bibendum lorem sed
+                venenatis tempus. Nulla sem arcu, accumsan et eleifend vel,
+                euismod sed leo. Aenean et justo neque. Phasellus vitae sem
+                tempor libero ullamcorper varius.
+              </p>
+            </div>
+          </div>
+        </details>
+      </section>
+      <section class="mb-10">
+        <h2>Vores Sponsorere</h2>
+        <p class="mb-10">
+          Stort tak til vores sponsorere som er med til at skabe fundamentet for
+          festivalen
+        </p>
+        <img src="./assets/sponsorer.f4e1e607.webp" alt="sponsor" />
+      </section>
+    </main>
+    <!-- footeren -->
+
+    <footer class="bg-rod">
+      <div
+        class="grid grid-cols-2 gap-14 p-10 lg:flex lg:flex-row lg:justify-evenly"
+      >
+        <div>
+          <h4 class="font-bold text-offwhite">Samarbejdspartnere</h4>
+          <h4 class="text-offwhite">Venues</h4>
+          <h4 class="text-offwhite">Sponsorere</h4>
+        </div>
+        <div>
+          <h4 class="font-bold text-offwhite">Om Vildskud</h4>
+          <h4 class="text-offwhite">Om os</h4>
+          <h4 class="text-offwhite">Cookiepolitik</h4>
+          <h4 class="text-offwhite">Privatlivspolitik</h4>
+          <h4 class="text-offwhite">Handelsbetingelser</h4>
+          <h4 class="text-offwhite">Sitemap</h4>
+        </div>
+        <div>
+          <h4 class="font-bold text-offwhite">Find os</h4>
+          <h4 class="text-offwhite">Kontakt os</h4>
+        </div>
+
+        <div class="flex gap-8">
+          <a href="#0"
+            ><img
+              class="h-12 w-12"
+              src="./assets/facebookikon.5998be06.svg"
+              alt="facebook ikon"
+          /></a>
+
+          <a href="#0"
+            ><img
+              class="h-12 w-12"
+              src="./assets/instagramikon.451eeb48.svg"
+              alt="instagram ikon"
+          /></a>
+        </div>
+      </div>
+      <div>
+        <p class="m-0 flex justify-center p-2 text-sm text-offwhite">
+          Copyright © 2022 | Lunefuld.dk | CVR.nr.: 12 34 56 78
+        </p>
+      </div>
+    </footer>
+    
+  </body>
+</html>

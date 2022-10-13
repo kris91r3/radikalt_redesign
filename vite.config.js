@@ -19,6 +19,8 @@ export default defineConfig({
         spilletider: resolve(__dirname, "src/spilletider.html"),
         vaermed: resolve(__dirname, "src/vaermed.html"),
 
+        sitemap: resolve(__dirname, "src/sitemap.html"),
+
         // about: resolve(__dirname, "src/about.html"),
       },
     },

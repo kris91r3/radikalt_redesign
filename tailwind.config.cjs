@@ -18,7 +18,7 @@ module.exports = {
         lilla: "#460137",
         blaa: "#19007b",
         lysgul: "#ffffe0",
-        lysblaa: "#e7f0ff",
+        lysblaa: "#f8faff",
       },
     },
     fontFamily: {

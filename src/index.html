@@ -44,15 +44,15 @@
       </div>
     </div>
   </div>
-  <header class="bg-bla">
-    <div x-data="{ isOpen: false }" class="flex justify-between bg-bla p-4">
+  <header>
+    <div x-data="{ isOpen: false }" class="flex justify-between bg-lilla p-4">
       <!-- header right section -->
       <div class="flex items-center">
         <span>
           <a href="index.html"
             ><img
-              class="mx-4 w-44 p-1 lg:w-60"
-              src="billeder/vildskudlogo.svg"
+              class="mx-4 p-4 lg:w-52"
+              src="billeder/logo_hvid.svg"
               alt="vildskudlogo" /></a
         ></span>
       </div>
@@ -80,22 +80,22 @@
         <div class="hidden space-x-14 lg:inline-block">
           <a
             href="koebbillet.html"
-            class="text-off rounded-sm p-2 text-lg text-offwhite hover:bg-blabla"
+            class="text-off rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
             >Køb billet</a
           >
           <a
             href="forestillinger.html"
-            class="rounded-sm p-2 text-lg text-offwhite hover:bg-blabla"
+            class="rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
             >Forestillinger</a
           >
           <a
             href="spilletider.html"
-            class="rounded-sm p-2 text-lg text-offwhite hover:bg-blabla"
+            class="rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
             >Spilletider</a
           >
           <a
             href="vaermed.html"
-            class="rounded-sm p-2 text-lg text-offwhite hover:bg-blabla"
+            class="rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
             >Vær med</a
           >
         </div>
@@ -104,7 +104,7 @@
         <div class="mobile-navbar">
           <!-- navbar wrapper -->
           <div
-            class="static top-24 h-48 w-full rounded-sm bg-blabla p-2 drop-shadow-xl"
+            class="static top-24 h-48 w-full rounded-sm bg-mellemrod p-2 drop-shadow-xl"
             x-show="isOpen"
             @click.away=" isOpen = false"
           >
@@ -164,7 +164,9 @@
 
     <!-- footeren -->
 
-    <footer class="bg-bla">
+    <!-- footeren -->
+
+    <footer class="bg-lilla">
       <div
         class="grid grid-cols-2 gap-14 p-10 lg:flex lg:flex-row lg:justify-evenly"
       >
@@ -179,9 +181,7 @@
           <h4 class="text-offwhite">Cookiepolitik</h4>
           <h4 class="text-offwhite">Privatlivspolitik</h4>
           <h4 class="text-offwhite">Handelsbetingelser</h4>
-          <h4>
-            <a class="text-offwhite" href="sitemap.html">Sitemap</a>
-          </h4>
+          <h4 class="text-offwhite">Sitemap</h4>
         </div>
         <div>
           <h4 class="font-bold text-offwhite">Find os</h4>

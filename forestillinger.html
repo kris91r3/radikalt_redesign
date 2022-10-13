@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Vildskud Festival</title>
-    <script type="module" crossorigin src="./assets/main.4df40dc6.js"></script>
-    <link rel="stylesheet" href="./assets/main.f72044c9.css">
+    <script type="module" crossorigin src="./assets/main.35771575.js"></script>
+    <link rel="stylesheet" href="./assets/main.24bf6d53.css">
   </head>
-  <header class="bg-rod">
-    <div x-data="{ isOpen: false }" class="flex justify-between bg-rod p-4">
+  <header>
+    <div x-data="{ isOpen: false }" class="flex justify-between bg-lilla p-4">
       <!-- header right section -->
       <div class="flex items-center">
         <span>
           <a href="index.html"
             ><img
-              class="mx-4 w-44 p-1 lg:w-60"
-              src="./assets/vildskudlogoblaa.a49b81a1.svg"
+              class="mx-4 p-4 lg:w-52"
+              src="./assets/logo_hvid.388e05c8.svg"
               alt="vildskudlogo" /></a
         ></span>
       </div>
@@ -45,22 +45,22 @@
         <div class="hidden space-x-14 lg:inline-block">
           <a
             href="koebbillet.html"
-            class="text-off rounded-sm p-2 text-lg text-offwhite hover:bg-mellemrod"
+            class="text-off rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
             >Køb billet</a
           >
           <a
             href="forestillinger.html"
-            class="rounded-sm p-2 text-lg text-offwhite hover:bg-mellemrod"
+            class="rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
             >Forestillinger</a
           >
           <a
             href="spilletider.html"
-            class="rounded-sm p-2 text-lg text-offwhite hover:bg-mellemrod"
+            class="rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
             >Spilletider</a
           >
           <a
             href="vaermed.html"
-            class="rounded-sm p-2 text-lg text-offwhite hover:bg-mellemrod"
+            class="rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
             >Vær med</a
           >
         </div>
@@ -91,8 +91,8 @@
       </div>
     </div>
   </header>
-  <body class="">
-    <main class="mx-10 lg:mx-64">
+  <body class="bg-lysgul">
+    <main class="mx-10 lg:mx-80">
       <!-- om tekst -->
       <section class="mb-10">
         <h1 class="lg:text-center">Forestillinger</h1>
@@ -112,14 +112,15 @@
       <section
         class=""
         id="step"
-        x-data="{ spilledag: 'alledage', spillested: 'allevenues', forestilling: 'alleforestillinger', skjulteforestillinger : 0 }"
+        x-data="{spilledag: 'alledage', spillested: 'allevenues', forestilling: henturlparam(), skjulteforestillinger : 0 }"
       >
         <div class="">
           <!-- Styling af filterknapperne på form-->
           <form id="filtre" class="col grid-col grid gap-10 md:flex">
-            <div class=":border-bla lg:border-2 lg:border-solid">
+            <div class="">
               <label for="spilledag"></label>
               <select
+                class="border-2 border-solid border-blaa bg-lysgul hover:border-mellemblaa"
                 name="spilledag"
                 id="spilledag"
                 x-model="spilledag"
@@ -135,9 +136,10 @@
               </select>
             </div>
 
-            <div class="lg:border-2 lg:border-solid lg:border-bla">
+            <div class="">
               <label for="spillested"></label>
               <select
+                class="border-2 border-solid border-blaa bg-lysgul hover:border-mellemblaa"
                 name="spillested"
                 id="spillested"
                 x-model="spillested"
@@ -152,9 +154,10 @@
               </select>
             </div>
 
-            <div class="lg:border-2 lg:border-solid lg:border-bla">
+            <div class="">
               <label for="forestilling"></label>
               <select
+                class="border-2 border-solid border-blaa bg-lysgul hover:border-mellemblaa"
                 name="forestilling"
                 id="forestilling"
                 x-model="forestilling"
@@ -181,6 +184,7 @@
         <section class="forestillinger gap-3 py-8">
           <!-- go go yo-yoko -->
           <article
+            id="gogo"
             class="forestilling mb-10"
             :class="{'hidden': !(['alledage', 'torsdag', 'fredag'].includes(spilledag) && ['allevenues', 'xenon'].includes(spillested) && ['alleforestillinger', 'gogo'].includes(forestilling) ) }"
             x-transition:enter.duration.800ms
@@ -188,7 +192,7 @@
             <!-- x-show alternativ syntaks -->
             <div class="mb-10">
               <div
-                class="grid grid-cols-1 border-2 border-solid border-bla md:grid-cols-2 lg:grid-cols-3"
+                class="grid grid-cols-1 border-2 border-solid border-blaa md:grid-cols-2 lg:grid-cols-3"
               >
                 <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
                 <!-- kolonne 1 -->
@@ -208,10 +212,17 @@
                     <h4 class="font-bold">Varighed:</h4>
                     <p>1 time</p>
                   </div>
+                  <div>
+                    <a
+                      class="rounded-sm bg-mellemblaa p-2 px-3 text-center text-offwhite drop-shadow-lg hover:bg-blaa"
+                      href=""
+                      >Del Forestilling</a
+                    >
+                  </div>
                 </div>
                 <!-- kolonne 3 -->
                 <div class="grid gap-5 p-4">
-                  <div class="border-2 border-solid border-bla p-2">
+                  <div class="border-2 border-solid border-blaa p-2">
                     <h4 class="font-bold">Spilletider</h4>
                     <p>
                       Tors. d. 4. kl 20:15 &
@@ -222,7 +233,9 @@
                   <div>
                     <a
                       href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                      ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
+                      ><h3
+                        class="rounded-sm bg-gul pt-2 pb-2 text-center text-moerkgul drop-shadow-lg hover:bg-mellemgul"
+                      >
                         Reserver Plads
                       </h3>
                     </a>
@@ -239,8 +252,12 @@
                 </div>
               </div>
               <details>
-                <summary class="bg-bla p-2">Læs om stykket</summary>
-                <div class="border-2 border-solid border-bla bg-lysbla p-2">
+                <summary
+                  class="bg-gradient-to-r from-blaa to-pink p-2 text-2xl font-bold text-offwhite"
+                >
+                  Læs om stykket
+                </summary>
+                <div class="border-2 border-solid border-blaa bg-lysblaa p-2">
                   <p>
                     Find din yoyo frem og sæt dig selv fri i en skov. Det går
                     godt for de tre roomies med at dele lejlighed, men kæft det
@@ -275,7 +292,7 @@
           >
             <div class="mb-10">
               <div
-                class="grid grid-cols-1 border-2 border-solid border-bla md:grid-cols-2 lg:grid-cols-3"
+                class="grid grid-cols-1 border-2 border-solid border-blaa md:grid-cols-2 lg:grid-cols-3"
               >
                 <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
                 <!-- kolonne 1 -->
@@ -298,10 +315,17 @@
                     <h4 class="font-bold">Varighed:</h4>
                     <p>1 time</p>
                   </div>
+                  <div>
+                    <a
+                      class="rounded-sm bg-mellemblaa p-2 px-3 text-center text-offwhite drop-shadow-lg hover:bg-blaa"
+                      href=""
+                      >Del Forestilling</a
+                    >
+                  </div>
                 </div>
                 <!-- kolonne 3 -->
                 <div class="grid gap-5 p-4">
-                  <div class="border-2 border-solid border-bla p-2">
+                  <div class="border-2 border-solid border-blaa p-2">
                     <h4 class="font-bold">Spilletider</h4>
                     <p>
                       Tirs. d. 2. kl 16:00 &
@@ -312,7 +336,9 @@
                   <div>
                     <a
                       href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                      ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
+                      ><h3
+                        class="rounded-sm bg-gul pt-2 pb-2 text-center text-moerkgul drop-shadow-lg hover:bg-mellemgul"
+                      >
                         Reserver Plads
                       </h3>
                     </a>
@@ -329,8 +355,12 @@
                 </div>
               </div>
               <details>
-                <summary class="bg-bla p-2">Læs om stykket</summary>
-                <div class="border-2 border-solid border-bla bg-lysbla p-2">
+                <summary
+                  class="bg-gradient-to-r from-blaa to-pink p-2 text-2xl font-bold text-offwhite"
+                >
+                  Læs om stykket
+                </summary>
+                <div class="border-2 border-solid border-blaa bg-lysblaa p-2">
                   <p>
                     Find din yoyo frem og sæt dig selv fri i en skov. Det går
                     godt for de tre roomies med at dele lejlighed, men kæft det
@@ -364,10 +394,8 @@
             :class="{'hidden': !(['alledage', 'fredag', 'lordag'].includes(spilledag) && ['allevenues', 'vox'].includes(spillested) && ['alleforestillinger', 'mandligger'].includes(forestilling) ) }"
             x-transition:enter.duration.800ms
           >
-            <div class="mb-10">
-              <div
-                class="grid grid-cols-1 border-2 border-solid border-bla md:grid-cols-2 lg:grid-cols-3"
-              >
+            <div class="mb-10 border-2 border-solid border-blaa">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
                 <!-- kolonne 1 -->
                 <div class="mx-auto mb-5 md:mt-5 lg:mx-5">
@@ -389,10 +417,17 @@
                     <h4 class="font-bold">Varighed:</h4>
                     <p>1 time</p>
                   </div>
+                  <div>
+                    <a
+                      class="rounded-sm bg-mellemblaa p-2 px-3 text-center text-offwhite drop-shadow-lg hover:bg-blaa"
+                      href=""
+                      >Del Forestilling</a
+                    >
+                  </div>
                 </div>
                 <!-- kolonne 3 -->
                 <div class="grid gap-5 p-4">
-                  <div class="border-2 border-solid border-bla p-2">
+                  <div class="border-2 border-solid border-blaa p-2">
                     <h4 class="font-bold">Spilletider</h4>
                     <p>
                       Fre. d. 5. kl 19:15 &
@@ -403,7 +438,9 @@
                   <div>
                     <a
                       href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                      ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
+                      ><h3
+                        class="rounded-sm bg-gul pt-2 pb-2 text-center text-moerkgul drop-shadow-lg hover:bg-mellemgul"
+                      >
                         Reserver Plads
                       </h3>
                     </a>
@@ -420,8 +457,12 @@
                 </div>
               </div>
               <details>
-                <summary class="bg-bla p-2">Læs om stykket</summary>
-                <div class="border-2 border-solid border-bla bg-lysbla p-2">
+                <summary
+                  class="bg-gradient-to-r from-blaa to-pink p-2 text-2xl font-bold text-offwhite"
+                >
+                  Læs om stykket
+                </summary>
+                <div class="border-2 border-solid border-blaa bg-lysblaa p-2">
                   <p>
                     Find din yoyo frem og sæt dig selv fri i en skov. Det går
                     godt for de tre roomies med at dele lejlighed, men kæft det
@@ -457,7 +498,7 @@
           >
             <div class="mb-10">
               <div
-                class="grid grid-cols-1 border-2 border-solid border-bla md:grid-cols-2 lg:grid-cols-3"
+                class="grid grid-cols-1 border-2 border-solid border-blaa md:grid-cols-2 lg:grid-cols-3"
               >
                 <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
                 <!-- kolonne 1 -->
@@ -480,10 +521,17 @@
                     <h4 class="font-bold">Varighed:</h4>
                     <p>1 time</p>
                   </div>
+                  <div>
+                    <a
+                      class="rounded-sm bg-mellemblaa p-2 px-3 text-center text-offwhite drop-shadow-lg hover:bg-blaa"
+                      href=""
+                      >Del Forestilling</a
+                    >
+                  </div>
                 </div>
                 <!-- kolonne 3 -->
                 <div class="grid gap-5 p-4">
-                  <div class="border-2 border-solid border-bla p-2">
+                  <div class="border-2 border-solid border-blaa p-2">
                     <h4 class="font-bold">Spilletider</h4>
                     <p>
                       Fre. d. 5. kl 20:30 &
@@ -494,7 +542,9 @@
                   <div>
                     <a
                       href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                      ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
+                      ><h3
+                        class="rounded-sm bg-gul pt-2 pb-2 text-center text-moerkgul drop-shadow-lg hover:bg-mellemgul"
+                      >
                         Reserver Plads
                       </h3>
                     </a>
@@ -511,8 +561,12 @@
                 </div>
               </div>
               <details>
-                <summary class="bg-bla p-2">Læs om stykket</summary>
-                <div class="border-2 border-solid border-bla bg-lysbla p-2">
+                <summary
+                  class="bg-gradient-to-r from-blaa to-pink p-2 text-2xl font-bold text-offwhite"
+                >
+                  Læs om stykket
+                </summary>
+                <div class="border-2 border-solid border-blaa bg-lysblaa p-2">
                   <p>
                     Find din yoyo frem og sæt dig selv fri i en skov. Det går
                     godt for de tre roomies med at dele lejlighed, men kæft det
@@ -548,7 +602,7 @@
           >
             <div class="mb-10">
               <div
-                class="grid grid-cols-1 border-2 border-solid border-bla md:grid-cols-2 lg:grid-cols-3"
+                class="grid grid-cols-1 border-2 border-solid border-blaa md:grid-cols-2 lg:grid-cols-3"
               >
                 <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
                 <!-- kolonne 1 -->
@@ -568,10 +622,17 @@
                     <h4 class="font-bold">Varighed:</h4>
                     <p>1 time</p>
                   </div>
+                  <div>
+                    <a
+                      class="rounded-sm bg-mellemblaa p-2 px-3 text-center text-offwhite drop-shadow-lg hover:bg-blaa"
+                      href=""
+                      >Del Forestilling</a
+                    >
+                  </div>
                 </div>
                 <!-- kolonne 3 -->
                 <div class="grid gap-5 p-4">
-                  <div class="border-2 border-solid border-bla p-2">
+                  <div class="border-2 border-solid border-blaa p-2">
                     <h4 class="font-bold">Spilletider</h4>
                     <p>
                       Tors. d. 4. kl 15:00 & 18:15 & 20:15 &
@@ -582,7 +643,9 @@
                   <div>
                     <a
                       href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                      ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
+                      ><h3
+                        class="rounded-sm bg-gul pt-2 pb-2 text-center text-moerkgul drop-shadow-lg hover:bg-mellemgul"
+                      >
                         Reserver Plads
                       </h3>
                     </a>
@@ -599,8 +662,12 @@
                 </div>
               </div>
               <details>
-                <summary class="bg-bla p-2">Læs om stykket</summary>
-                <div class="border-2 border-solid border-bla bg-lysbla p-2">
+                <summary
+                  class="bg-gradient-to-r from-blaa to-pink p-2 text-2xl font-bold text-offwhite"
+                >
+                  Læs om stykket
+                </summary>
+                <div class="border-2 border-solid border-blaa bg-lysblaa p-2">
                   <p>
                     Find din yoyo frem og sæt dig selv fri i en skov. Det går
                     godt for de tre roomies med at dele lejlighed, men kæft det
@@ -636,7 +703,7 @@
           >
             <div class="mb-10">
               <div
-                class="grid grid-cols-1 border-2 border-solid border-bla md:grid-cols-2 lg:grid-cols-3"
+                class="grid grid-cols-1 border-2 border-solid border-blaa md:grid-cols-2 lg:grid-cols-3"
               >
                 <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
                 <!-- kolonne 1 -->
@@ -659,10 +726,17 @@
                     <h4 class="font-bold">Varighed:</h4>
                     <p>1 time</p>
                   </div>
+                  <div>
+                    <a
+                      class="rounded-sm bg-mellemblaa p-2 px-3 text-center text-offwhite drop-shadow-lg hover:bg-blaa"
+                      href=""
+                      >Del Forestilling</a
+                    >
+                  </div>
                 </div>
                 <!-- kolonne 3 -->
                 <div class="grid gap-5 p-4">
-                  <div class="border-2 border-solid border-bla p-2">
+                  <div class="border-2 border-solid border-blaa p-2">
                     <h4 class="font-bold">Spilletider</h4>
                     <p>
                       Tirs. d. 2. kl 18:30 &
@@ -673,7 +747,9 @@
                   <div>
                     <a
                       href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                      ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
+                      ><h3
+                        class="rounded-sm bg-gul pt-2 pb-2 text-center text-moerkgul drop-shadow-lg hover:bg-mellemgul"
+                      >
                         Reserver Plads
                       </h3>
                     </a>
@@ -690,8 +766,12 @@
                 </div>
               </div>
               <details>
-                <summary class="bg-bla p-2">Læs om stykket</summary>
-                <div class="border-2 border-solid border-bla bg-lysbla p-2">
+                <summary
+                  class="bg-gradient-to-r from-blaa to-pink p-2 text-2xl font-bold text-offwhite"
+                >
+                  Læs om stykket
+                </summary>
+                <div class="border-2 border-solid border-blaa bg-lysblaa p-2">
                   <p>
                     Find din yoyo frem og sæt dig selv fri i en skov. Det går
                     godt for de tre roomies med at dele lejlighed, men kæft det
@@ -727,7 +807,7 @@
           >
             <div class="mb-10">
               <div
-                class="grid grid-cols-1 border-2 border-solid border-bla md:grid-cols-2 lg:grid-cols-3"
+                class="grid grid-cols-1 border-2 border-solid border-blaa md:grid-cols-2 lg:grid-cols-3"
               >
                 <!-- 3 div, så den kan gå fra 1 -> 2 og så til 3 kolonner -->
                 <!-- kolonne 1 -->
@@ -750,10 +830,17 @@
                     <h4 class="font-bold">Varighed:</h4>
                     <p>1 time</p>
                   </div>
+                  <div>
+                    <a
+                      class="rounded-sm bg-mellemblaa p-2 px-3 text-center text-offwhite drop-shadow-lg hover:bg-blaa"
+                      href=""
+                      >Del Forestilling</a
+                    >
+                  </div>
                 </div>
                 <!-- kolonne 3 -->
                 <div class="grid gap-5 p-4">
-                  <div class="border-2 border-solid border-bla p-2">
+                  <div class="border-2 border-solid border-blaa p-2">
                     <h4 class="font-bold">Spilletider</h4>
                     <p>
                       Tors. d. 4. kl 18:30 &
@@ -766,7 +853,9 @@
                   <div>
                     <a
                       href="https://www.yourticket.dk/arrangementer/?fbclid=IwAR3qr_3q3eEFzQZ1HE2IArLRT59nSHd0Rw1hwbeQGN_OEI4Rk9xOkUY4x4o"
-                      ><h3 class="bg-gul pt-2 pb-2 text-center drop-shadow-lg">
+                      ><h3
+                        class="rounded-sm bg-gul pt-2 pb-2 text-center text-moerkgul drop-shadow-lg hover:bg-mellemgul"
+                      >
                         Reserver Plads
                       </h3>
                     </a>
@@ -783,8 +872,12 @@
                 </div>
               </div>
               <details>
-                <summary class="bg-bla p-2">Læs om stykket</summary>
-                <div class="border-2 border-solid border-bla bg-lysbla p-2">
+                <summary
+                  class="bg-gradient-to-r from-blaa to-pink p-2 text-2xl font-bold text-offwhite"
+                >
+                  Læs om stykket
+                </summary>
+                <div class="border-2 border-solid border-blaa bg-lysblaa p-2">
                   <p>
                     Find din yoyo frem og sæt dig selv fri i en skov. Det går
                     godt for de tre roomies med at dele lejlighed, men kæft det
@@ -819,7 +912,8 @@
       </section>
     </main>
     <!-- footeren -->
-    <footer class="bg-rod">
+
+    <footer class="bg-lilla">
       <div
         class="grid grid-cols-2 gap-14 p-10 lg:flex lg:flex-row lg:justify-evenly"
       >
@@ -834,7 +928,7 @@
           <h4 class="text-offwhite">Cookiepolitik</h4>
           <h4 class="text-offwhite">Privatlivspolitik</h4>
           <h4 class="text-offwhite">Handelsbetingelser</h4>
-          <h4 class="text-offwhite">Sitemap</h4>
+          <h4><a class="text-offwhite" href="sitemap.html">Sitemap</a></h4>
         </div>
         <div>
           <h4 class="font-bold text-offwhite">Find os</h4>
@@ -863,6 +957,33 @@
         </p>
       </div>
     </footer>
+
+    <script>
+      function henturlparam() {
+        let forestillingfraurl = "alleforestillinger";
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        if (urlParams.has("forestilling")) {
+          forestillingfraurl = urlParams.get("forestilling");
+        }
+        return forestillingfraurl;
+      }
+
+      function ingenforestillinger() {
+        const skjulteforestillinger = document.querySelectorAll(
+          ".forestilling.hidden"
+        ).length;
+        if (skjulteforestillinger === 7) {
+          document
+            .querySelector("#ingenforestillinger")
+            .classList.remove("hidden");
+        } else {
+          document
+            .querySelector("#ingenforestillinger")
+            .classList.add("hidden");
+        }
+      }
+    </script>
 
     
   </body>

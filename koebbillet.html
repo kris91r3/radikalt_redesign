@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Vildskud Festival - Køb billet</title>
-    <script type="module" crossorigin src="./assets/main.4df40dc6.js"></script>
-    <link rel="stylesheet" href="./assets/main.f72044c9.css">
+    <script type="module" crossorigin src="./assets/main.35771575.js"></script>
+    <link rel="stylesheet" href="./assets/main.24bf6d53.css">
   </head>
-  <header class="bg-bla">
-    <div x-data="{ isOpen: false }" class="flex justify-between bg-bla p-4">
+  <header>
+    <div x-data="{ isOpen: false }" class="flex justify-between bg-lilla p-4">
       <!-- header right section -->
       <div class="flex items-center">
         <span>
           <a href="index.html"
             ><img
-              class="mx-4 w-44 p-1 lg:w-60"
-              src="./assets/vildskudlogo.69da10ff.svg"
+              class="mx-4 p-4 lg:w-52"
+              src="./assets/logo_hvid.388e05c8.svg"
               alt="vildskudlogo" /></a
         ></span>
       </div>
@@ -45,22 +45,22 @@
         <div class="hidden space-x-14 lg:inline-block">
           <a
             href="koebbillet.html"
-            class="text-off rounded-sm p-2 text-lg text-offwhite hover:bg-blabla"
+            class="text-off rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
             >Køb billet</a
           >
           <a
             href="forestillinger.html"
-            class="rounded-sm p-2 text-lg text-offwhite hover:bg-blabla"
+            class="rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
             >Forestillinger</a
           >
           <a
             href="spilletider.html"
-            class="rounded-sm p-2 text-lg text-offwhite hover:bg-blabla"
+            class="rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
             >Spilletider</a
           >
           <a
             href="vaermed.html"
-            class="rounded-sm p-2 text-lg text-offwhite hover:bg-blabla"
+            class="rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
             >Vær med</a
           >
         </div>
@@ -69,7 +69,7 @@
         <div class="mobile-navbar">
           <!-- navbar wrapper -->
           <div
-            class="static top-24 h-48 w-full rounded-sm bg-blabla p-2 drop-shadow-xl"
+            class="static top-24 h-48 w-full rounded-sm bg-mellemrod p-2 drop-shadow-xl"
             x-show="isOpen"
             @click.away=" isOpen = false"
           >
@@ -91,8 +91,8 @@
       </div>
     </div>
   </header>
-  <body>
-    <main class="mx-10 lg:mx-64">
+  <body class="bg-lysgul">
+    <main class="mx-10 lg:mx-80">
       <section class="mb-10">
         <h1 class="lg:text-center">Billet til Vildskud festival</h1>
         <h2>
@@ -107,30 +107,41 @@
         </p>
       </section>
 
-      <section class="mb-10">
-        <h2>Sådan køber du billet og reseverer plads</h2>
-        <p>
-          Step 1: Vælg mellem endags-eller partoutbillet, og gennemfør køb
-          <br />
-          <br />
-          Step 2: Tjek bekræftelsesmail for voucher kode <br />
-          <br />
-          Step 3: Kig programmet og forestillingerne igennem <br />
-          <br />
-          Step 4: Reserver plads med din voucher kode <br />
-          <br />
-        </p>
+      <section class="mb-10 gap-10 lg:grid lg:grid-cols-2">
+        <div>
+          <h2>Sådan køber du billet og reseverer plads</h2>
+          <p>
+            Step 1: Vælg mellem endags-eller partoutbillet, og gennemfør køb
+            <br />
+            <br />
+            Step 2: Tjek bekræftelsesmail for voucher kode <br />
+            <br />
+            Step 3: Kig programmet og forestillingerne igennem <br />
+            <br />
+            Step 4: Reserver plads med din voucher kode <br />
+            <br />
+          </p>
+        </div>
+        <div>
+          <img
+            class="lg:ml-20"
+            src="./assets/billetter.de803876.svg"
+            alt="billetbillede"
+            width="250"
+            height="250"
+          />
+        </div>
       </section>
 
       <section class="mb-10 grid gap-5 text-sort">
         <!-- køb billet -->
         <details>
           <summary
-            class="border-2 border-solid border-bla p-2 text-2xl font-bold"
+            class="bg-gradient-to-r from-blaa to-pink p-2 text-2xl font-bold text-offwhite"
           >
             Køb endagsbillet
           </summary>
-          <div class="border-2 border-solid border-bla bg-lysbla p-2">
+          <div class="border-2 border-solid border-blaa bg-lysblaa p-2">
             <main
               class="mb-8 p-8 pb-4"
               id="step"
@@ -221,11 +232,11 @@
                     du køber din endagsbillet.</label
                   >
                   <div
-                    class="grid w-44 place-self-center rounded-sm bg-gul py-3 drop-shadow-xl hover:opacity-60"
+                    class="grid w-44 place-self-center rounded-sm bg-gul py-3 drop-shadow-xl hover:bg-mellemgul hover:opacity-60"
                   >
                     <a
                       href="https://www.yourticket.dk/arrangementer/?s=vildskud%20festival&fbclid=IwAR0KdjK74bhGl-SLxRNBaDkA9LAcKgAZkUuUynzFw9oyu8DwOueg3vxfkQk"
-                      class="text-center text-lg font-bold"
+                      class="text-center text-lg font-bold text-moerkgul"
                       >Køb Billet</a
                     >
                   </div>
@@ -268,11 +279,11 @@
 
         <details>
           <summary
-            class="border-2 border-solid border-bla p-2 text-2xl font-bold"
+            class="bg-gradient-to-r from-blaa to-pink p-2 text-2xl font-bold text-offwhite"
           >
             Køb Partoutbillet
           </summary>
-          <div class="border-2 border-solid border-bla bg-lysbla p-2">
+          <div class="border-2 border-solid border-blaa bg-lysblaa p-2">
             <div>
               <p>
                 Køb din partoutbillet her og gå herefter ind og reserver plads
@@ -280,11 +291,11 @@
               </p>
             </div>
             <div
-              class="grid w-44 place-self-center rounded-sm bg-gul py-3 drop-shadow-xl hover:opacity-60"
+              class="grid w-44 place-self-center rounded-sm bg-gul py-3 drop-shadow-xl hover:bg-mellemgul"
             >
               <a
                 href="https://www.yourticket.dk/arrangementer/?s=vildskud%20festival&fbclid=IwAR0KdjK74bhGl-SLxRNBaDkA9LAcKgAZkUuUynzFw9oyu8DwOueg3vxfkQk"
-                class="text-center text-lg font-bold"
+                class="text-center text-lg font-bold text-moerkgul"
                 >Køb Partoutbillet</a
               >
             </div>
@@ -294,11 +305,11 @@
         <!-- reserver plads -->
         <details>
           <summary
-            class="border-2 border-solid border-bla p-2 text-2xl font-bold"
+            class="bg-gradient-to-r from-blaa to-pink p-2 text-2xl font-bold text-offwhite"
           >
             Reserver plads
           </summary>
-          <div class="border-2 border-solid border-bla bg-lysbla p-2">
+          <div class="border-2 border-solid border-blaa bg-lysblaa p-2">
             <div>
               <p>
                 Når du har bestilt din billet får du en bekræftelsesmail. I
@@ -330,7 +341,7 @@
     </main>
     <!-- footeren -->
 
-    <footer class="bg-bla">
+    <footer class="bg-lilla">
       <div
         class="grid grid-cols-2 gap-14 p-10 lg:flex lg:flex-row lg:justify-evenly"
       >
@@ -345,7 +356,7 @@
           <h4 class="text-offwhite">Cookiepolitik</h4>
           <h4 class="text-offwhite">Privatlivspolitik</h4>
           <h4 class="text-offwhite">Handelsbetingelser</h4>
-          <h4 class="text-offwhite">Sitemap</h4>
+          <h4><a class="text-offwhite" href="sitemap.html">Sitemap</a></h4>
         </div>
         <div>
           <h4 class="font-bold text-offwhite">Find os</h4>

@@ -15,7 +15,7 @@ module.exports = {
         lysbla: "#E5F2F2",
         offwhite: "#e6e5e5",
         pink: "#e500b3",
-        lilla: "#570044",
+        lilla: "#460137",
         blaa: "#19007b",
         lysgul: "#ffffe0",
         lysblaa: "#e7f0ff",

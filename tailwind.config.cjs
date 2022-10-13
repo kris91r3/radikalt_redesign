@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         rod: "#CF1919",
-        mellemrod:"#a80909",
+        mellemrod: "#a80909",
         gul: "#F4F465",
         mellemgul: "#d6d63e",
         moerkgul: "#565606",
@@ -14,6 +14,11 @@ module.exports = {
         blabla: "#006969",
         lysbla: "#E5F2F2",
         offwhite: "#e6e5e5",
+        pink: "#e500b3",
+        lilla: "#570044",
+        blaa: "#19007b",
+        lysgul: "#ffffe0",
+        lysblaa: "#e7f0ff",
       },
     },
     fontFamily: {

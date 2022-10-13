@@ -159,13 +159,7 @@
                 form="filtre"
                 x-on:change="$nextTick(() => { ingenforestillinger() });"
               >
-                <option
-                  x-data="{url:'{{route('dog', ['dog'=>selectedDog])}}',}"
-                  href="{{route('dog', ['dog'=>selectedDog])}}"
-                  value="alleforestillinger"
-                >
-                  Alle forestillinger
-                </option>
+                <option value="alleforestillinger">Alle forestillinger</option>
                 <option value="gogo">GO GO YO-Yoko</option>
                 <option value="whatfires">
                   What Fires Together Wires Together

@@ -6,81 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Vildskud Festival</title>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Event",
-        "name": "vildskud",
-        "description": "festival",
-        "image": "https://kris91r3.github.io/radikalt_redesign/",
-        "startDate": "2022-08-02",
-        "endDate": "2022-08-06",
-        "performer": {
-          "@type": "TheaterGroup",
-          "name": ""
-        },
-        "offers": [
-          {
-            "@type": "Offer",
-            "name": "enkeltbillet",
-            "price": "120",
-            "priceCurrency": "DKK",
-            "validFrom": "",
-            "url": "https://kris91r3.github.io/radikalt_redesign/koebbillet.html",
-            "availability": ""
-          },
-          {
-            "@type": "Offer",
-            "name": "partoutbillet",
-            "price": "295",
-            "priceCurrency": "DKK",
-            "validFrom": "",
-            "url": "https://kris91r3.github.io/radikalt_redesign/koebbillet.html",
-            "availability": ""
-          }
-        ]
-      }
-    </script>
     <script type="module" crossorigin src="./assets/main.35771575.js"></script>
     <link rel="stylesheet" href="./assets/main.3ba4102c.css">
   </head>
-  <!-- cookieboks -->
-  <div class="sticky top-1/2" id="cookieboks">
-    <div
-      class="absolute right-0 grid max-w-lg place-items-center bg-offwhite p-10"
-    >
-      <div class="">
-        <h3 class="text-lg font-bold">Vi anvender Cookies</h3>
-        <p>
-          Vildskud.dk anvender cookies for at kunne give dig den bedste
-          brugeroplevelse på vores hjemmeside, samt til markedsførings- og
-          analytiske formål. Ved at klikke “Accepter og luk” bekræfter du, at du
-          har læst vores cookie politik og accepterer vores brug af cookies.
-          Ønsker du ikke at acceptere, eller vil du læse mere, kan du finde
-          vores politik for brug af cookies
-          <a
-            class="text-blue-900 underline visited:text-purple-700"
-            href="cookiepolitik"
-            >her</a
-          >.
-        </p>
-      </div>
-
-      <div class="flex flex-row justify-center" id="accepter">
-        <button
-          class="m-4 w-36 max-w-[50%] rounded-sm bg-blabla p-2 text-base text-offwhite"
-        >
-          Accepter cookies
-        </button>
-        <button
-          class="m-4 w-36 max-w-[100%] rounded-sm bg-blabla p-2 text-base text-offwhite"
-          id="afvis"
-        >
-          Afvis
-        </button>
-      </div>
-    </div>
-  </div>
   <header>
     <div x-data="{ isOpen: false }" class="flex justify-between bg-lilla p-4">
       <!-- header right section -->
@@ -163,43 +91,81 @@
       </div>
     </div>
   </header>
-  <body class="">
+  <body class="bg-lysgul">
     <!-- herosection -->
 
-    <main class="">
-      <section
-        class="bg-[url('/billeder/forsidebillede.svg')] bg-cover bg-no-repeat"
-      >
-        <div class="flex flex-col gap-14 bg-slate-700/70 pb-14">
-          <div class="m-10 max-w-3xl place-self-center text-center">
-            <h1 class="my-10 text-6xl text-white">Vildskud Festival</h1>
-            <h2 class="mb-10 leading-10 text-white">
-              TEATERSTYKKER, PERFORMANCES, WORKSHOPS, FESTER, BÆREDYGTIGHED OG
-              MEGET MERE
-            </h2>
-            <h2 class="text-white">D. 2. - 6. august</h2>
-          </div>
-          <div class="mb-10 flex justify-center gap-6">
-            <div class="grid w-40 rounded-sm bg-gul py-3 hover:bg-mellemgul">
-              <a
-                href="forestillinger.html"
-                class="text-center text-lg font-bold text-moerkgul"
-                >Se programmet</a
-              >
-            </div>
-            <div class="grid w-40 rounded-sm bg-gul py-3 hover:bg-mellemgul">
-              <a
-                href="koebbillet.html"
-                class="text-center text-lg font-bold text-moerkgul"
-                >Køb Billet</a
-              >
-            </div>
-          </div>
-        </div>
+    <main class="mx-10 lg:mx-80">
+      <section>
+        <ul>
+          <li>
+            <a class="text-2xl font-bold" href="index.html">Forside</a>
+            <ul class="ml-16 grid gap-6">
+              <li>
+                <a class="text-lg font-bold" href="koebbillet.html"
+                  >Køb Billet</a
+                >
+              </li>
+              <!--  -->
+              <li>
+                <a class="text-lg font-bold" href="forestillinger.html"
+                  >Forestillinger</a
+                >
+                <ul class="ml-16">
+                  <li>
+                    <a href="forestillinger.html"
+                      >Det specifikke forestilling</a
+                    >
+                  </li>
+                  <li>
+                    <a href="forestillinger.html"
+                      >Det specifikke forestilling</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <!--  -->
+              <li>
+                <a class="text-lg font-bold" href="spilletider.html"
+                  >Spilletider</a
+                >
+              </li>
+              <!--  -->
+              <li>
+                <a class="text-lg font-bold" href="vaermed.html">Vær med</a>
+              </li>
+              <li>
+                <a class="text-lg font-bold" href="">Footer</a>
+                <ul class="ml-16 grid gap-6">
+                  <div>
+                    <li class="font-bold">Samarbejdspartnere</li>
+                    <ul class="ml-8">
+                      <li>Venues</li>
+                      <li>Sponsorere</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <li class="font-bold">Om Vildskud</li>
+                    <ul class="ml-16">
+                      <li>Om os</li>
+                      <li>Cookiepolitik</li>
+                      <li>Privatlivspolitik</li>
+                      <li>Handelsbetingelser</li>
+                      <li><a href="sitemap.html">Sitemap</a></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <li class="font-bold">Find os</li>
+                    <ul class="ml-8">
+                      <li>Kontakt os</li>
+                    </ul>
+                  </div>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </section>
     </main>
-
-    <!-- footeren -->
 
     <!-- footeren -->
 

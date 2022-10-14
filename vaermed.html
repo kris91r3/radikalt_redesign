@@ -2,15 +2,18 @@
 <html lang="da">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Vildskud Festival</title>
     <script type="module" crossorigin src="./assets/main.35771575.js"></script>
-    <link rel="stylesheet" href="./assets/main.bca82f8f.css">
+    <link rel="stylesheet" href="./assets/main.5e3262c8.css">
   </head>
   <header>
-    <div x-data="{ isOpen: false }" class="flex justify-between bg-lilla p-4">
+    <section
+      x-data="{ isOpen: false }"
+      class="flex justify-between bg-lilla p-4"
+    >
       <!-- header right section -->
       <div class="flex items-center">
         <span>
@@ -69,7 +72,7 @@
         <div class="mobile-navbar">
           <!-- navbar wrapper -->
           <div
-            class="static top-24 h-48 w-full rounded-sm bg-gradient-to-r from-blaa to-pink p-2 drop-shadow-xl"
+            class="static top-24 h-48 w-full rounded-sm bg-moerklilla p-2 drop-shadow-xl"
             x-show="isOpen"
             @click.away=" isOpen = false"
           >
@@ -89,7 +92,7 @@
         </div>
         <!-- mobile navbar slut -->
       </div>
-    </div>
+    </section>
   </header>
   <body class="bg-lysgul">
     <main class="mx-10 lg:mx-80">

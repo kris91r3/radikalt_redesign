@@ -2,13 +2,16 @@
 <html lang="da">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Vildskud Festival - Køb billet</title>
   </head>
   <header>
-    <div x-data="{ isOpen: false }" class="flex justify-between bg-lilla p-4">
+    <section
+      x-data="{ isOpen: false }"
+      class="flex justify-between bg-lilla p-4"
+    >
       <!-- header right section -->
       <div class="flex items-center">
         <span>
@@ -67,7 +70,7 @@
         <div class="mobile-navbar">
           <!-- navbar wrapper -->
           <div
-            class="static top-24 h-48 w-full rounded-sm bg-gradient-to-r from-blaa to-pink p-2 drop-shadow-xl"
+            class="static top-24 h-48 w-full rounded-sm bg-moerklilla p-2 drop-shadow-xl"
             x-show="isOpen"
             @click.away=" isOpen = false"
           >
@@ -87,7 +90,7 @@
         </div>
         <!-- mobile navbar slut -->
       </div>
-    </div>
+    </section>
   </header>
   <body class="bg-lysgul">
     <main class="mx-10 lg:mx-80">
@@ -107,9 +110,10 @@
 
       <section class="mb-10 gap-10 lg:grid lg:grid-cols-2">
         <div>
-          <h2>Sådan køber du billet og reseverer plads</h2>
+          <h2>Sådan køber du billet og reseverer plads.</h2>
           <p>
-            Step 1: Vælg mellem endags-eller partoutbillet, og gennemfør køb
+            Step 1: Vælg mellem endags-eller partoutbillet, og gennemfør køb.
+            Obs. du skal købe billet, før du kan reservere en plads.
             <br />
             <br />
             Step 2: Tjek bekræftelsesmail for voucher kode <br />
@@ -245,7 +249,7 @@
                 <div class="">
                   <button
                     id="knap2"
-                    class="border-2 border-bla p-2"
+                    class="border-bla border-2 p-2"
                     x-on:click="step = 'step1'"
                     x-show="step === 'step2'"
                   >
@@ -253,7 +257,7 @@
                   </button>
                   <button
                     id="knap3"
-                    class="border-2 border-bla p-2"
+                    class="border-bla border-2 p-2"
                     x-on:click="step = 'step2'"
                     x-show="step === 'step3'"
                   >
@@ -263,7 +267,7 @@
                 <div class="">
                   <button
                     id="knap2"
-                    class="border-2 border-bla p-2"
+                    class="border-bla border-2 p-2"
                     x-on:click="step = 'step2'"
                     x-show="step === 'step1'"
                   >
@@ -310,10 +314,11 @@
           <div class="border-2 border-solid border-blaa bg-lysblaa p-2">
             <div>
               <p>
-                Når du har bestilt din billet får du en bekræftelsesmail. I
-                denne mail har du modtaget en voucher kode. Du reserverer plads
-                på de ønskede forestillinger der går på dagen eller dagene du
-                har bestilt billet til med din voucher kode.
+                Du skal købe billet, før du kan reservere plads. Når du har Købt
+                din billet, får du en bekræftelsesmail. I denne mail har du
+                modtaget en voucher kode. Du reserverer plads på de ønskede
+                forestillinger der går på dagen eller dagene du har bestilt
+                billet til med din voucher kode.
               </p>
             </div>
             <div>

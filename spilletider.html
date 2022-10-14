@@ -7,91 +7,92 @@
     <meta name="robots" content="noindex" />
     <title>Vildskud Festival - Spilletider</title>
     <script type="module" crossorigin src="./assets/main.35771575.js"></script>
-    <link rel="stylesheet" href="./assets/main.5e3262c8.css">
+    <link rel="stylesheet" href="./assets/main.f6e315f5.css">
   </head>
-  <header x-data="{ isOpen: false }">
-    <section class="flex justify-between bg-lilla p-4">
-      <!-- header right section -->
-      <div class="flex items-center">
-        <span>
-          <a href="index.html"
-            ><img
-              class="mx-4 w-44 p-4 lg:w-52"
-              src="./assets/hvidtlogo.ae2b01cf.svg"
-              alt="vildskudlogo" /></a
-        ></span>
-      </div>
 
-      <!-- left header section -->
-      <div
-        class="flex flex-col place-items-end justify-between pt-6 pr-4 lg:pr-8 lg:pt-0"
-      >
-        <button @click="isOpen = !isOpen" type="submit">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6 text-white lg:hidden"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-        <div class="hidden space-x-14 lg:inline-block">
-          <a
-            href="koebbillet.html"
-            class="text-off rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
-            >Køb billet</a
-          >
-          <a
-            href="forestillinger.html"
-            class="rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
-            >Forestillinger</a
-          >
-          <a
-            href="spilletider.html"
-            class="rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
-            >Spilletider</a
-          >
-          <a
-            href="vaermed.html"
-            class="rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
-            >Vær med</a
-          >
+  <body class="bg-lysgul">
+    <header x-data="{ isOpen: false }">
+      <section class="flex justify-between bg-lilla p-4">
+        <!-- header right section -->
+        <div class="flex items-center">
+          <span>
+            <a href="index.html"
+              ><img
+                class="mx-4 w-44 p-4 lg:w-52"
+                src="./assets/hvidtlogo.ae2b01cf.svg"
+                alt="vildskudlogo" /></a
+          ></span>
         </div>
 
-        <!-- mobile navbar -->
-        <div class="mobile-navbar">
-          <!-- navbar wrapper -->
-          <div
-            class="static top-24 h-48 w-full rounded-sm bg-moerklilla p-2 drop-shadow-xl"
-            x-show="isOpen"
-            @click.away=" isOpen = false"
-          >
-            <div class="flex flex-col space-y-5">
-              <a href="koebbillet.html" class="text-md text-offwhite"
-                >Køb billet</a
-              >
-              <a href="forestillinger.html" class="text-md text-offwhite"
-                >Forestillinger</a
-              >
-              <a href="spilletider.html" class="text-md text-offwhite"
-                >Spilletider</a
-              >
-              <a href="vaermed.html" class="text-md text-offwhite">Vær med</a>
+        <!-- left header section -->
+        <div
+          class="flex flex-col place-items-end justify-between pt-6 pr-4 lg:pr-8 lg:pt-0"
+        >
+          <button @click="isOpen = !isOpen" type="submit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-white lg:hidden"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <div class="hidden space-x-14 lg:inline-block">
+            <a
+              href="koebbillet.html"
+              class="text-off rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
+              >Køb billet</a
+            >
+            <a
+              href="forestillinger.html"
+              class="rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
+              >Forestillinger</a
+            >
+            <a
+              href="spilletider.html"
+              class="rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
+              >Spilletider</a
+            >
+            <a
+              href="vaermed.html"
+              class="rounded-sm from-blaa to-pink p-2 text-lg text-offwhite hover:bg-gradient-to-r"
+              >Vær med</a
+            >
+          </div>
+
+          <!-- mobile navbar -->
+          <div class="mobile-navbar">
+            <!-- navbar wrapper -->
+            <div
+              class="static top-24 h-48 w-full rounded-sm bg-moerklilla p-2 drop-shadow-xl"
+              x-show="isOpen"
+              @click.away=" isOpen = false"
+            >
+              <div class="flex flex-col space-y-5">
+                <a href="koebbillet.html" class="text-md text-offwhite"
+                  >Køb billet</a
+                >
+                <a href="forestillinger.html" class="text-md text-offwhite"
+                  >Forestillinger</a
+                >
+                <a href="spilletider.html" class="text-md text-offwhite"
+                  >Spilletider</a
+                >
+                <a href="vaermed.html" class="text-md text-offwhite">Vær med</a>
+              </div>
             </div>
           </div>
+          <!-- mobile navbar slut -->
         </div>
-        <!-- mobile navbar slut -->
-      </div>
-    </section>
-  </header>
-  <body class="bg-lysgul">
+      </section>
+    </header>
     <main class="mx-10 lg:mx-80">
       <section class="mb-10">
         <h1 class="lg-text-center lg:text-center">Spilletider</h1>
